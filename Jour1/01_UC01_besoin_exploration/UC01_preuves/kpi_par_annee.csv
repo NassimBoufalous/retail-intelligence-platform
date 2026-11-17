@@ -1,0 +1,21 @@
+﻿id;kpi;2001;2002;2003;2004;2005
+K01;CA magasin;258159395.0;256977672.0;259060055.0;260029657.0;255839564.0
+K01b;CA web;344217849.0;343913208.0;347370411.0;345147634.0;341177504.0
+K02;Tickets magasin;17991;17990;17990;18039;17990
+K02b;Commandes web;17991;17990;17990;18039;17990
+K03;Panier moyen magasin;14349.36;14284.47;14400.23;14414.86;14221.21
+K03b;Panier moyen web;19132.78;19116.91;19309.08;19133.41;18964.84
+K04;Quantités vendues magasin;6814234;6825340;6820308;6887086;6742533
+K05;Taux de remise magasin (%);49.97;50.16;49.83;50.03;49.94
+K05b;Taux de coupon magasin (%);9.94;10.13;9.84;9.88;9.82
+K06;Évolution CA magasin N/N-1 (%);;-0.46;0.81;0.37;-1.61
+K07;Part du web dans le CA (%);57.14;57.23;57.28;57.03;57.15
+K08;Montant des retours magasin (date de retour);1952526.0;5938034.0;7549423.0;7287690.0;7233351.0
+K09;Taux de retour en quantité, magasin (%);2.86;2.99;2.81;2.91;2.71
+K10;Stock moyen par relevé (unités);500.3;500.2;500.0;500.1;500.0
+K11;Marge nette magasin;-111466147.0;-113186907.0;-110735394.0;-112259640.0;-110312653.0
+K11b;Taux de marge nette magasin (%);-47.94;-49.01;-47.41;-47.9;-47.81
+K12;Lignes de vente magasin;134873;135084;134773;136014;133467
+K13;Taux de rupture (%);0.101;0.099;0.099;0.099;0.1
+K14;Note moyenne des avis (/5);4.23;4.23;4.25;4.25;4.23
+K15;Part des clics liés à une vente (%);9.89;9.88;9.88;9.88;9.81

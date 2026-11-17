@@ -1,0 +1,33 @@
+# Environnement Python
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# Données (volumineuses, fournies par le formateur ou générées) : jamais versionnées
+data/
+retail_project/
+
+# Documents de cours fournis par l'école (non redistribués)
+Cours*.pdf
+TP*.pdf
+projet_fil_rouge.pdf
+Tables Principales.png
+
+# Notes personnelles et configuration locale
+notes/
+.claude/
+CLAUDE.md
+
+# Fichiers temporaires de génération des PDF
+*.tmp.html
+
+# Fichiers de verrouillage Office (document ouvert)
+~$*
+
+# Travaux d autres etudiants (consultation uniquement)
+*Younes*
+
+# Un seul format par document dans le dépôt : PDF en priorité
+# (les sources .md et le classeur doublon du dictionnaire restent en local pour regénérer les PDF)
+Jour*/**/UC0*.md
+Jour*/**/UC01_dictionnaire_KPI.xlsx
