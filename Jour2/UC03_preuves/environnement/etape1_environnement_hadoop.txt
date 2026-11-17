@@ -1,0 +1,135 @@
+[2026-11-17 14:09:08] $ head -2 /etc/os-release; uname -r; hostname
+PRETTY_NAME="Ubuntu 24.04.5 LTS"
+NAME="Ubuntu"
+6.6.87.2-microsoft-standard-WSL2
+retail-lake-vm
+(code retour : 0)
+
+[2026-11-17 14:09:08] $ ls -d /usr/lib/jvm/java-*-openjdk-amd64; java -version 2>&1 | head -1; echo 'JAVA_HOME de Hadoop (hadoop-env.sh) :'; grep '^export JAVA_HOME' $HADOOP_HOME/etc/hadoop/hadoop-env.sh; $JAVA_HOME/bin/java -version
+/usr/lib/jvm/java-1.17.0-openjdk-amd64
+/usr/lib/jvm/java-1.21.0-openjdk-amd64
+/usr/lib/jvm/java-17-openjdk-amd64
+/usr/lib/jvm/java-21-openjdk-amd64
+openjdk version "21.0.13.0.3" 2026-10-24
+JAVA_HOME de Hadoop (hadoop-env.sh) :
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+openjdk version "17.0.21.0.3" 2026-10-24
+OpenJDK Runtime Environment (build 17.0.21.0.3+1-1-24.04.1-Ubuntu)
+OpenJDK 64-Bit Server VM (build 17.0.21.0.3+1-1-24.04.1-Ubuntu, mixed mode, sharing)
+(code retour : 0)
+
+[2026-11-17 14:09:08] $ hadoop version
+Hadoop 3.5.0
+Source code repository https://github.com/apache/hadoop.git -r dbcc7cd797100e6b32cd84f85b53a5193a5f9af0
+Compiled by cnauroth on 2026-03-24T16:56Z
+Compiled on platform linux-x86_64
+Compiled with protoc 3.25.5
+From source with checksum 64582ed0a62a169c39a19c734a8f33b5
+This command was run using /opt/hadoop/share/hadoop/common/hadoop-common-3.5.0.jar
+(code retour : 0)
+
+[2026-11-17 14:09:08] $ echo HADOOP_HOME=$HADOOP_HOME; readlink -f $(which hdfs); ls $HADOOP_HOME/etc/hadoop/core-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml
+HADOOP_HOME=/opt/hadoop
+/opt/hadoop/bin/hdfs
+/opt/hadoop/etc/hadoop/core-site.xml
+/opt/hadoop/etc/hadoop/hdfs-site.xml
+(code retour : 0)
+
+[2026-11-17 14:09:08] $ grep -A1 '<name>' $HADOOP_HOME/etc/hadoop/core-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml | grep -v -- '--' | sed 's/^.*site.xml-//'
+/opt/hadoop/etc/hadoop/core-site.xml:    <name>fs.defaultFS</name>
+    <value>hdfs://localhost:9000</value>
+/opt/hadoop/etc/hadoop/hdfs-site.xml:    <name>dfs.replication</name>
+    <value>1</value>
+/opt/hadoop/etc/hadoop/hdfs-site.xml:    <name>dfs.namenode.name.dir</name>
+    <value>file:///home/etudiant/hadoop-data/namenode</value>
+/opt/hadoop/etc/hadoop/hdfs-site.xml:    <name>dfs.datanode.data.dir</name>
+    <value>file:///home/etudiant/hadoop-data/datanode</value>
+(code retour : 0)
+
+[2026-11-17 14:09:10] $ hdfs getconf -confKey fs.defaultFS; hdfs getconf -confKey dfs.replication; hdfs getconf -confKey dfs.blocksize; hdfs getconf -namenodes
+hdfs://localhost:9000
+1
+134217728
+localhost
+(code retour : 0)
+
+[2026-11-17 14:09:10] $ jps
+738 DataNode
+1847 Jps
+1019 SecondaryNameNode
+591 NameNode
+(code retour : 0)
+
+[2026-11-17 14:09:11] $ for p in NameNode DataNode SecondaryNameNode; do pid=$(jps | awk -v p=$p '$2==p{print $1}'); echo "$p (pid $pid) -> $(readlink -f /proc/$pid/exe)"; done
+NameNode (pid 591) -> /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+DataNode (pid 738) -> /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+SecondaryNameNode (pid 1019) -> /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+(code retour : 0)
+
+[2026-11-17 14:09:12] $ hdfs dfsadmin -report
+Configured Capacity: 1081101176832 (1006.85 GB)
+Present Capacity: 1020302696448 (950.23 GB)
+DFS Remaining: 1019260379136 (949.26 GB)
+DFS Used: 1042317312 (994.03 MB)
+DFS Used%: 0.10%
+Replicated Blocks:
+	Under replicated blocks: 0
+	Blocks with corrupt replicas: 0
+	Missing blocks: 0
+	Missing blocks (with replication factor 1): 0
+	Badly Distributed Blocks: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+Erasure Coded Block Groups: 
+	Low redundancy block groups: 0
+	Block groups with corrupt internal blocks: 0
+	Missing block groups: 0
+	Badly Distributed Blocks: 0
+	Low redundancy blocks with highest priority to recover: 0
+	Pending deletion blocks: 0
+
+-------------------------------------------------
+Live datanodes (1):
+
+Name: 127.0.0.1:9866 (localhost)
+Hostname: retail-lake-vm
+Decommission Status : Normal
+Configured Capacity: 1081101176832 (1006.85 GB)
+DFS Used: 1042317312 (994.03 MB)
+Non DFS Used: 5806125056 (5.41 GB)
+DFS Remaining: 1019260379136 (949.26 GB)
+DFS Used%: 0.10%
+DFS Remaining%: 94.28%
+Configured Cache Capacity: 0 (0 B)
+Cache Used: 0 (0 B)
+Cache Remaining: 0 (0 B)
+Cache Used%: 100.00%
+Cache Remaining%: 0.00%
+Xceivers: 0
+Last contact: Tue Nov 17 14:09:10 CET 2026
+Last Block Report: Tue Nov 17 14:08:19 CET 2026
+Num of Blocks: 0
+(code retour : 0)
+
+[2026-11-17 14:09:12] $ curl -s 'http://localhost:9870/jmx?qry=Hadoop:service=NameNode,name=NameNodeInfo' | grep -E '"(Version|Safemode|Total|Free|DeadNodes)"'; curl -s 'http://localhost:9870/jmx?qry=Hadoop:service=NameNode,name=NameNodeStatus' | grep -E '"(State|HostAndPort)"'
+    "Version" : "3.5.0, rdbcc7cd797100e6b32cd84f85b53a5193a5f9af0",
+    "Free" : 1019260379136,
+    "Total" : 1081101176832,
+    "Safemode" : "",
+    "DeadNodes" : "{}",
+    "State" : "active",
+    "HostAndPort" : "localhost:9000",
+(code retour : 0)
+
+[2026-11-17 14:09:12] $ ss -ltnp | grep -E ':(9000|9870|9864|9866|9867) '
+LISTEN 0      500           0.0.0.0:9870       0.0.0.0:*    users:(("java",pid=591,fd=342)) 
+LISTEN 0      256           0.0.0.0:9867       0.0.0.0:*    users:(("java",pid=738,fd=475)) 
+LISTEN 0      256           0.0.0.0:9866       0.0.0.0:*    users:(("java",pid=738,fd=337)) 
+LISTEN 0      4096          0.0.0.0:9864       0.0.0.0:*    users:(("java",pid=738,fd=474)) 
+LISTEN 0      256         127.0.0.1:9000       0.0.0.0:*    users:(("java",pid=591,fd=357)) 
+(code retour : 0)
+
+[2026-11-17 14:09:12] $ echo "lignes ERROR/FATAL dans les journaux Hadoop : $(cat $HADOOP_HOME/logs/*.log | grep -cE ' (ERROR|FATAL) ')"
+lignes ERROR/FATAL dans les journaux Hadoop : 4
+(code retour : 0)
+

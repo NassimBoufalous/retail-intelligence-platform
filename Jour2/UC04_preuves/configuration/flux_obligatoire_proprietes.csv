@@ -1,0 +1,32 @@
+processeur;type;propriete;valeur
+GetFile - lecture /data/nifi/input;GetFile;Input Directory;/data/nifi/input
+GetFile - lecture /data/nifi/input;GetFile;File Filter;[^\.].*
+GetFile - lecture /data/nifi/input;GetFile;Batch Size;10
+GetFile - lecture /data/nifi/input;GetFile;Keep Source File;false
+GetFile - lecture /data/nifi/input;GetFile;Recurse Subdirectories;false
+GetFile - lecture /data/nifi/input;GetFile;Polling Interval;30 sec
+GetFile - lecture /data/nifi/input;GetFile;Ignore Hidden Files;true
+GetFile - lecture /data/nifi/input;GetFile;Minimum File Age;0 sec
+GetFile - lecture /data/nifi/input;GetFile;Minimum File Size;0 B
+GetFile - lecture /data/nifi/input;GetFile;(relations auto-terminées);-
+GetFile - lecture /data/nifi/input;GetFile;(planification);10 sec
+LogAttribute - journal des échecs;LogAttribute;Log Level;warn
+LogAttribute - journal des échecs;LogAttribute;Log Payload;false
+LogAttribute - journal des échecs;LogAttribute;Attributes to Log Regular Expression;.*
+LogAttribute - journal des échecs;LogAttribute;Log FlowFile Properties;true
+LogAttribute - journal des échecs;LogAttribute;Output Format;Line per Attribute
+LogAttribute - journal des échecs;LogAttribute;Character Set;UTF-8
+LogAttribute - journal des échecs;LogAttribute;(relations auto-terminées);success
+LogAttribute - journal des échecs;LogAttribute;(planification);10 sec
+PutHDFS - dépôt /retail-lake/raw/nifi;PutHDFS;Hadoop Configuration Resources;/opt/hadoop/etc/hadoop/core-site.xml,/opt/hadoop/etc/hadoop/hdfs-site.xml
+PutHDFS - dépôt /retail-lake/raw/nifi;PutHDFS;Directory;/retail-lake/raw/nifi
+PutHDFS - dépôt /retail-lake/raw/nifi;PutHDFS;Conflict Resolution Strategy;fail
+PutHDFS - dépôt /retail-lake/raw/nifi;PutHDFS;Append Mode;DEFAULT
+PutHDFS - dépôt /retail-lake/raw/nifi;PutHDFS;Writing Strategy;writeAndRename
+PutHDFS - dépôt /retail-lake/raw/nifi;PutHDFS;Compression Codec;NONE
+PutHDFS - dépôt /retail-lake/raw/nifi;PutHDFS;Ignore Locality;false
+PutHDFS - dépôt /retail-lake/raw/nifi;PutHDFS;Resource Transfer Source;FLOWFILE_CONTENT
+PutHDFS - dépôt /retail-lake/raw/nifi;PutHDFS;(relations auto-terminées);success
+PutHDFS - dépôt /retail-lake/raw/nifi;PutHDFS;(planification);10 sec
+connexion;PutHDFS - dépôt /retail-lake/raw/nifi -> LogAttribute - journal des échecs;relations;failure
+connexion;GetFile - lecture /data/nifi/input -> PutHDFS - dépôt /retail-lake/raw/nifi;relations;success

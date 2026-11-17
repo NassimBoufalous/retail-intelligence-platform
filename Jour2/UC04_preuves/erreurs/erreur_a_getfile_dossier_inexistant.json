@@ -1,0 +1,10 @@
+{
+  "processeur": "GetFile - lecture /data/nifi/input",
+  "validationStatus": "INVALID",
+  "validationErrors": [
+    "'Input Directory' validated against '/data/nifi/input_inexistant' is invalid because Directory does not exist"
+  ],
+  "proprietes": {
+    "Input Directory": "/data/nifi/input_inexistant"
+  }
+}

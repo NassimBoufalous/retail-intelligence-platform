@@ -1,0 +1,57 @@
+[2026-11-17 14:09:31] $ ls -l /home/etudiant/retail-intelligence-platform/retail_project/data/store_sales/store_sales.dat; file /home/etudiant/retail-intelligence-platform/retail_project/data/store_sales/store_sales.dat; wc -l < /home/etudiant/retail-intelligence-platform/retail_project/data/store_sales/store_sales.dat; head -1 /home/etudiant/retail-intelligence-platform/retail_project/data/store_sales/store_sales.dat | tr -d '\r' | awk -F'|' '{print "champs par ligne :", NF}'; head -c 250 /home/etudiant/retail-intelligence-platform/retail_project/data/store_sales/store_sales.dat; echo; test -r /home/etudiant/retail-intelligence-platform/retail_project/data/store_sales/store_sales.dat && echo 'fichier LISIBLE'
+-rwxrwxrwx 1 etudiant etudiant 92764700 Nov 16 11:55 /home/etudiant/retail-intelligence-platform/retail_project/data/store_sales/store_sales.dat
+/home/etudiant/retail-intelligence-platform/retail_project/data/store_sales/store_sales.dat: ASCII text, with CRLF line terminators
+667579
+champs par ligne : 23
+36890|71480|10001|44404|493944|2898|44093|10|294|0|31|18.00|30.78|23.08|238.70|715.48|558.00|954.18|21.46|0.00|715.48|736.94|157.48
+36890|71480|10000|44404|493944|2898|44093|10|279|0|54|99.21|148.82|83.34|3535.92|4500.36|5357.34|8036.28|225.02|0.00|
+fichier LISIBLE
+(code retour : 0)
+
+[2026-11-17 14:09:35] $ hdfs dfs -put retail_project/data/customer/customer.dat /retail-lake/raw/tpcxbb/initial/customer/  -> OK 
+[2026-11-17 14:09:38] $ hdfs dfs -put retail_project/data/customer_address/customer_address.dat /retail-lake/raw/tpcxbb/initial/customer_address/  -> OK 
+[2026-11-17 14:09:46] $ hdfs dfs -put retail_project/data/customer_demographics/customer_demographics.dat /retail-lake/raw/tpcxbb/initial/customer_demographics/  -> OK 
+[2026-11-17 14:09:50] $ hdfs dfs -put retail_project/data/date_dim/date_dim.dat /retail-lake/raw/tpcxbb/initial/date_dim/  -> OK 
+[2026-11-17 14:09:52] $ hdfs dfs -put retail_project/data/household_demographics/household_demographics.dat /retail-lake/raw/tpcxbb/initial/household_demographics/  -> OK 
+[2026-11-17 14:09:55] $ hdfs dfs -put retail_project/data/income_band/income_band.dat /retail-lake/raw/tpcxbb/initial/income_band/  -> OK 
+[2026-11-17 14:10:25] $ hdfs dfs -put retail_project/data/inventory/inventory.dat /retail-lake/raw/tpcxbb/initial/inventory/  -> OK 
+[2026-11-17 14:10:28] $ hdfs dfs -put retail_project/data/item/item.dat /retail-lake/raw/tpcxbb/initial/item/  -> OK 
+[2026-11-17 14:10:31] $ hdfs dfs -put retail_project/data/item_marketprices/item_marketprices.dat /retail-lake/raw/tpcxbb/initial/item_marketprices/  -> OK 
+[2026-11-17 14:10:34] $ hdfs dfs -put retail_project/data/item_marketprices/item_marketprices_audit.csv /retail-lake/raw/tpcxbb/initial/item_marketprices/  -> OK 
+[2026-11-17 14:10:40] $ hdfs dfs -put retail_project/data/product_reviews/product_reviews.dat /retail-lake/raw/tpcxbb/initial/product_reviews/  -> OK 
+[2026-11-17 14:10:43] $ hdfs dfs -put retail_project/data/promotion/promotion.dat /retail-lake/raw/tpcxbb/initial/promotion/  -> OK 
+[2026-11-17 14:10:45] $ hdfs dfs -put retail_project/data/reason/reason.dat /retail-lake/raw/tpcxbb/initial/reason/  -> OK 
+[2026-11-17 14:10:48] $ hdfs dfs -put retail_project/data/ship_mode/ship_mode.dat /retail-lake/raw/tpcxbb/initial/ship_mode/  -> OK 
+[2026-11-17 14:10:51] $ hdfs dfs -put retail_project/data/store/store.dat /retail-lake/raw/tpcxbb/initial/store/  -> OK 
+[2026-11-17 14:10:54] $ hdfs dfs -put retail_project/data/store_returns/store_returns.dat /retail-lake/raw/tpcxbb/initial/store_returns/  -> OK 
+[2026-11-17 14:11:05] $ hdfs dfs -put retail_project/data/store_sales/store_sales.dat /retail-lake/raw/tpcxbb/initial/store_sales/  -> OK 
+[2026-11-17 14:11:08] $ hdfs dfs -put retail_project/data/time_dim/time_dim.dat /retail-lake/raw/tpcxbb/initial/time_dim/  -> OK 
+[2026-11-17 14:11:10] $ hdfs dfs -put retail_project/data/warehouse/warehouse.dat /retail-lake/raw/tpcxbb/initial/warehouse/  -> OK 
+[2026-11-17 14:11:24] $ hdfs dfs -put retail_project/data/web_clickstreams/web_clickstreams.dat /retail-lake/raw/tpcxbb/initial/web_clickstreams/  -> OK 
+[2026-11-17 14:11:27] $ hdfs dfs -put retail_project/data/web_page/web_page.dat /retail-lake/raw/tpcxbb/initial/web_page/  -> OK 
+[2026-11-17 14:11:32] $ hdfs dfs -put retail_project/data/web_returns/web_returns.dat /retail-lake/raw/tpcxbb/initial/web_returns/  -> OK 
+[2026-11-17 14:11:44] $ hdfs dfs -put retail_project/data/web_sales/web_sales.dat /retail-lake/raw/tpcxbb/initial/web_sales/  -> OK 
+[2026-11-17 14:11:47] $ hdfs dfs -put retail_project/data/web_site/web_site.dat /retail-lake/raw/tpcxbb/initial/web_site/  -> OK 
+[2026-11-17 14:11:50] $ hdfs dfs -put retail_project/data_refresh/customer/customer.dat /retail-lake/raw/tpcxbb/refresh/customer/  -> OK 
+[2026-11-17 14:11:54] $ hdfs dfs -put retail_project/data_refresh/customer_address/customer_address.dat /retail-lake/raw/tpcxbb/refresh/customer_address/  -> OK 
+[2026-11-17 14:11:57] $ hdfs dfs -put retail_project/data_refresh/inventory/inventory.dat /retail-lake/raw/tpcxbb/refresh/inventory/  -> OK 
+[2026-11-17 14:12:00] $ hdfs dfs -put retail_project/data_refresh/item/item.dat /retail-lake/raw/tpcxbb/refresh/item/  -> OK 
+[2026-11-17 14:12:03] $ hdfs dfs -put retail_project/data_refresh/item_marketprices/item_marketprices.dat /retail-lake/raw/tpcxbb/refresh/item_marketprices/  -> OK 
+[2026-11-17 14:12:06] $ hdfs dfs -put retail_project/data_refresh/item_marketprices/item_marketprices_audit.csv /retail-lake/raw/tpcxbb/refresh/item_marketprices/  -> OK 
+[2026-11-17 14:12:10] $ hdfs dfs -put retail_project/data_refresh/product_reviews/product_reviews.dat /retail-lake/raw/tpcxbb/refresh/product_reviews/  -> OK 
+[2026-11-17 14:12:14] $ hdfs dfs -put retail_project/data_refresh/store_returns/store_returns.dat /retail-lake/raw/tpcxbb/refresh/store_returns/  -> OK 
+[2026-11-17 14:12:19] $ hdfs dfs -put retail_project/data_refresh/store_sales/store_sales.dat /retail-lake/raw/tpcxbb/refresh/store_sales/  -> OK 
+[2026-11-17 14:12:25] $ hdfs dfs -put retail_project/data_refresh/web_clickstreams/web_clickstreams.dat /retail-lake/raw/tpcxbb/refresh/web_clickstreams/  -> OK 
+[2026-11-17 14:12:29] $ hdfs dfs -put retail_project/data_refresh/web_returns/web_returns.dat /retail-lake/raw/tpcxbb/refresh/web_returns/  -> OK 
+[2026-11-17 14:12:32] $ hdfs dfs -put retail_project/data_refresh/web_sales/web_sales.dat /retail-lake/raw/tpcxbb/refresh/web_sales/  -> OK 
+
+[2026-11-17 14:12:34] $ echo "fichiers présents en raw/tpcxbb : $(hdfs dfs -ls -R /retail-lake/raw/tpcxbb | grep -c '^-')"; echo "statuts du manifeste : $(tail -n +2 /home/etudiant/retail-intelligence-platform/Jour2/01_UC03_hdfs/UC03_preuves/manifeste_depot_uc03.csv | cut -d';' -f11 | sort | uniq -c | xargs)"
+fichiers présents en raw/tpcxbb : 36
+statuts du manifeste : 36 OK
+(code retour : 0)
+
+[2026-11-17 14:12:37] $ hdfs dfs -put -f /home/etudiant/retail-intelligence-platform/Jour2/01_UC03_hdfs/UC03_preuves/manifeste_depot_uc03.csv /retail-lake/logs/ingestion/manifeste_depot_uc03_2026-11-17.csv && hdfs dfs -ls /retail-lake/logs/ingestion
+Found 1 items
+-rw-r--r--   1 etudiant supergroup       9242 2026-11-17 14:12 /retail-lake/logs/ingestion/manifeste_depot_uc03_2026-11-17.csv
+(code retour : 0)
+

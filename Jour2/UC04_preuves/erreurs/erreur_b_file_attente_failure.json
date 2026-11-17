@@ -1,0 +1,13 @@
+[
+  {
+    "uri": "https://localhost:8443/nifi-api/flowfile-queues/e9ab6e96-01a1-1000-d184-577935c9bd3a/flowfiles/da0f48e8-0308-43ea-969d-98b64b95c0ee",
+    "uuid": "da0f48e8-0308-43ea-969d-98b64b95c0ee",
+    "filename": "store_sales.dat",
+    "position": 1,
+    "size": 922171,
+    "queuedDuration": 3794,
+    "lineageDuration": 3818,
+    "penaltyExpiresIn": 26206,
+    "penalized": true
+  }
+]

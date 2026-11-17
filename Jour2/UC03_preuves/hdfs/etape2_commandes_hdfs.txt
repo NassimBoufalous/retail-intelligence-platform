@@ -1,0 +1,43 @@
+[2026-11-17 14:09:13] $ hdfs dfsadmin -report | sed -n '1,5p'
+Configured Capacity: 1081101176832 (1006.85 GB)
+Present Capacity: 1020302854592 (950.23 GB)
+DFS Remaining: 1020302618624 (950.23 GB)
+DFS Used: 235968 (230.44 KB)
+DFS Used%: 0.00%
+(code retour : 0)
+
+[2026-11-17 14:09:15] $ hdfs dfsadmin -printTopology
+Rack: /default-rack
+   127.0.0.1:9866 (localhost) In Service
+(code retour : 0)
+
+[2026-11-17 14:09:16] $ hdfs dfsadmin -safemode get
+Safe mode is OFF
+(code retour : 0)
+
+[2026-11-17 14:09:18] $ hdfs dfs -ls /
+
+(code retour : 0)
+
+[2026-11-17 14:09:20] $ hdfs dfs -mkdir -p /retail-lake
+
+(code retour : 0)
+
+[2026-11-17 14:09:21] $ hdfs dfs -ls -d /retail-lake
+drwxr-xr-x   - etudiant supergroup          0 2026-11-17 14:09 /retail-lake
+(code retour : 0)
+
+[2026-11-17 14:09:22] $ hdfs dfs -stat 'owner=%u group=%g permissions=%A type=%F' /retail-lake
+owner=etudiant group=supergroup permissions=rwxr-xr-x type=directory
+(code retour : 0)
+
+[2026-11-17 14:09:25] $ hdfs dfs -du -s -h /retail-lake; hdfs dfs -df -h /
+0  0  /retail-lake
+Filesystem                 Size     Used  Available  Use%
+hdfs://localhost:9000  1006.9 G  230.4 K    950.2 G    0%
+(code retour : 0)
+
+[2026-11-17 14:09:26] $ hdfs dfs -ls /dossier_inexistant
+ls: `/dossier_inexistant': No such file or directory
+(code retour : 1)
+

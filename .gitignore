@@ -11,6 +11,7 @@ retail_project/
 Cours*.pdf
 TP*.pdf
 projet_fil_rouge.pdf
+Livrables_*.pdf
 Tables Principales.png
 
 # Notes personnelles et configuration locale
@@ -31,3 +32,12 @@ CLAUDE.md
 # (les sources .md et le classeur doublon du dictionnaire restent en local pour regénérer les PDF)
 Jour*/**/UC0*.md
 Jour*/**/UC01_dictionnaire_KPI.xlsx
+
+# Questions de recul du Jour 2 : source .md locale, seul le PDF est versionné
+Jour*/**/J[0-9]_*.md
+# README du Jour 2 : source .md locale, seul le PDF est versionné
+Jour*/**/README_Jour*.md
+
+# Jour 2 : seuls les livrables demandés sont publiés (scripts et sommaire conservés en local)
+Jour2/scripts/
+Jour2/README.md

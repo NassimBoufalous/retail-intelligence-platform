@@ -1,0 +1,8 @@
+{
+  "pg": "e9ab6c86-01a1-1000-2fc7-3d506ba3e0d2",
+  "getfile": "e9ab6cc7-01a1-1000-6ae5-4de09620e655",
+  "puthdfs": "e9ab6d10-01a1-1000-1658-83b811f1a7c8",
+  "logattribute": "e9ab6e1c-01a1-1000-d3b5-d92bd7c55062",
+  "c_success": "e9ab6e6c-01a1-1000-c4e8-6d1639bf63a0",
+  "c_failure": "e9ab6e96-01a1-1000-d184-577935c9bd3a"
+}

@@ -1,0 +1,7 @@
+event_id;heure;type;composant;flowfile_uuid;taille;taille_octets;details_transit
+4;11/17/2026 14:21:30.598 CET;RECEIVE;GetFile - lecture /data/nifi/input;ab165426-d1f1-4615-a7e2-de9c3dd106b5;900.56 KB;922171;file:/data/nifi/input/store_sales.dat
+5;11/17/2026 14:21:31.249 CET;SEND;PutHDFS - dépôt /retail-lake/raw/nifi;ab165426-d1f1-4615-a7e2-de9c3dd106b5;900.56 KB;922171;hdfs://localhost:9000/retail-lake/raw/nifi/store_sales.dat
+6;11/17/2026 14:21:31.250 CET;ATTRIBUTES_MODIFIED;PutHDFS - dépôt /retail-lake/raw/nifi;ab165426-d1f1-4615-a7e2-de9c3dd106b5;900.56 KB;922171;
+7;11/17/2026 14:21:31.250 CET;DROP;PutHDFS - dépôt /retail-lake/raw/nifi;ab165426-d1f1-4615-a7e2-de9c3dd106b5;900.56 KB;922171;Auto-Terminated by success Relationship
+8;11/17/2026 14:22:34.043 CET;RECEIVE;GetFile - lecture /data/nifi/input;da0f48e8-0308-43ea-969d-98b64b95c0ee;900.56 KB;922171;file:/data/nifi/input/store_sales.dat
+9;11/17/2026 14:23:04.098 CET;DROP;LogAttribute - journal des échecs;da0f48e8-0308-43ea-969d-98b64b95c0ee;900.56 KB;922171;Auto-Terminated by success Relationship

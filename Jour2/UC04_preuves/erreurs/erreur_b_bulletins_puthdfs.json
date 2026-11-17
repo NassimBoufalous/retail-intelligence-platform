@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "groupId": "e9ab6c86-01a1-1000-2fc7-3d506ba3e0d2",
+    "sourceId": "e9ab6d10-01a1-1000-1658-83b811f1a7c8",
+    "timestamp": "14:22:34 CET",
+    "timestampIso": "2026-11-17T13:22:34.072Z",
+    "canRead": true,
+    "bulletin": {
+      "id": 0,
+      "category": "Log Message",
+      "groupId": "e9ab6c86-01a1-1000-2fc7-3d506ba3e0d2",
+      "sourceId": "e9ab6d10-01a1-1000-1658-83b811f1a7c8",
+      "sourceName": "PutHDFS - dépôt /retail-lake/raw/nifi",
+      "level": "WARNING",
+      "message": "PutHDFS[id=e9ab6d10-01a1-1000-1658-83b811f1a7c8] penalizing FlowFile[filename=store_sales.dat] and routing to failure because file with same name already exists",
+      "timestamp": "14:22:34 CET",
+      "timestampIso": "2026-11-17T13:22:34.072Z",
+      "sourceType": "PROCESSOR"
+    }
+  }
+]

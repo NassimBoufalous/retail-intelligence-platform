@@ -1,0 +1,118 @@
+[2026-11-17 14:21:27] ===== action : environnement =====
+[2026-11-17 14:21:27] preuve écrite : Jour2/02_UC04_nifi/UC04_preuves/etape6_environnement_nifi.json
+[2026-11-17 14:21:28] $ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64; /opt/nifi/bin/nifi.sh status 2>&1 | tail -3; readlink -f /proc/$(pgrep -f '[o]rg.apache.nifi.NiFi' | head -1)/exe; grep -E '^nifi.web.https.(host|port)=|^nifi.(provenance|content|flowfile).repository.directory|^nifi.nar.library.autoload|^nifi.security.user.login.identity.provider' /opt/nifi/conf/nifi.properties; ls /opt/nifi/extensions; grep preferIPv4 /opt/nifi/conf/bootstrap.conf; ss -ltn | grep 8443
+2026-11-17 14:21:28,099 INFO [main] org.apache.nifi.bootstrap.Command Application Process [17471] Command Status [SUCCESS] HTTP 200
+2026-11-17 14:21:28,100 INFO [main] org.apache.nifi.bootstrap.Command Status: UP
+
+/usr/lib/jvm/java-21-openjdk-amd64/bin/java
+nifi.nar.library.autoload.directory=./extensions
+nifi.flowfile.repository.directory=./flowfile_repository
+nifi.content.repository.directory.default=./content_repository
+nifi.provenance.repository.directory.default=./provenance_repository
+nifi.web.https.host=localhost
+nifi.web.https.port=8443
+nifi.security.user.login.identity.provider=single-user-provider
+nifi-hadoop-libraries-nar-2.12.0.nar
+nifi-hadoop-nar-2.12.0.nar
+java.arg.preferIPv4=-Djava.net.preferIPv4Stack=true
+LISTEN 0      50          127.0.0.1:8443       0.0.0.0:*          
+(code retour : 0)
+[2026-11-17 14:21:28] ===== action : construire =====
+[2026-11-17 14:21:28] process group créé : e9ab6c86-01a1-1000-2fc7-3d506ba3e0d2
+[2026-11-17 14:21:28] processeur créé : GetFile - lecture /data/nifi/input (GetFile) id=e9ab6cc7-01a1-1000-6ae5-4de09620e655 état=INVALID erreurs=["'Relationship success' is invalid because Relationship 'success' is not connected to any component and is not auto-terminated"]
+[2026-11-17 14:21:28] processeur créé : PutHDFS - dépôt /retail-lake/raw/nifi (PutHDFS) id=e9ab6d10-01a1-1000-1658-83b811f1a7c8 état=INVALID erreurs=["'Relationship failure' is invalid because Relationship 'failure' is not connected to any component and is not auto-terminated", "'Upstream Connections' is invalid because Processor requires an upstream connection but currently has none"]
+[2026-11-17 14:21:28] processeur créé : LogAttribute - journal des échecs (LogAttribute) id=e9ab6e1c-01a1-1000-d3b5-d92bd7c55062 état=INVALID erreurs=["'Upstream Connections' is invalid because Processor requires an upstream connection but currently has none"]
+[2026-11-17 14:21:28] connexion créée : ['success'] fichiers lus id=e9ab6e6c-01a1-1000-c4e8-6d1639bf63a0
+[2026-11-17 14:21:28] connexion créée : ['failure'] échecs de dépôt HDFS id=e9ab6e96-01a1-1000-d184-577935c9bd3a
+[2026-11-17 14:21:28] preuve écrite : Jour2/02_UC04_nifi/UC04_preuves/flux_obligatoire_definition_nifi.json
+[2026-11-17 14:21:28] preuve écrite : Jour2/02_UC04_nifi/UC04_preuves/flux_obligatoire_proprietes.csv
+[2026-11-17 14:21:28] ===== action : executer =====
+[2026-11-17 14:21:28] fichier source (kit, conservé) : retail_project/data_refresh/store_sales/store_sales.dat ; 922171 octets ; SHA-256 3c71c010a17d15c90564ddb12be4a1286f494669198b55e782edef6f8e8b23df
+[2026-11-17 14:21:30] $ ls -l /data/nifi/input; hdfs dfs -ls -d /retail-lake/raw/nifi
+total 904
+-rwxrwxrwx 1 etudiant etudiant 922171 Nov 16 11:55 store_sales.dat
+drwxr-xr-x   - etudiant supergroup          0 2026-11-17 14:21 /retail-lake/raw/nifi
+(code retour : 0)
+[2026-11-17 14:21:30] processeur PutHDFS - dépôt /retail-lake/raw/nifi -> RUNNING
+[2026-11-17 14:21:30] processeur LogAttribute - journal des échecs -> RUNNING
+[2026-11-17 14:21:30] processeur GetFile - lecture /data/nifi/input -> RUNNING
+[2026-11-17 14:21:37] fichier consommé par GetFile et traité par PutHDFS : True
+[2026-11-17 14:21:40] processeur GetFile - lecture /data/nifi/input -> STOPPED
+[2026-11-17 14:21:40] statut du flux après exécution :
+Process Group « UC04 - Ingestion TPCx-BB (GetFile -> PutHDFS) » : entrées=0 sorties=0 en file=0 (0 bytes)
+  - GetFile - lecture /data/nifi/input     état=Stopped  entrées=   0 (0 o) sorties=   1 (922171 o) tâches=2
+  - LogAttribute - journal des échecs      état=Running  entrées=   0 (0 o) sorties=   0 (0 o) tâches=0
+  - PutHDFS - dépôt /retail-lake/raw/nifi  état=Running  entrées=   1 (922171 o) sorties=   0 (0 o) tâches=1
+  - file PutHDFS - dépôt /retail-lake/raw/nifi -> LogAttribute - journal des échecs [échecs de dépôt HDFS] : 0 (0 bytes)
+  - file GetFile - lecture /data/nifi/input -> PutHDFS - dépôt /retail-lake/raw/nifi [fichiers lus] : 0 (0 bytes)
+[2026-11-17 14:21:40] preuve écrite : Jour2/02_UC04_nifi/UC04_preuves/execution_statut_processus.json
+[2026-11-17 14:21:40] $ ls -l /data/nifi/input; ls -l retail_project/data_refresh/store_sales/store_sales.dat
+total 0
+-rwxrwxrwx 1 etudiant etudiant 922171 Nov 16 11:55 retail_project/data_refresh/store_sales/store_sales.dat
+(code retour : 0)
+[2026-11-17 14:21:43] $ hdfs dfs -ls -h /retail-lake/raw/nifi; hdfs dfs -du -h /retail-lake/raw/nifi
+Found 1 items
+-rw-r--r--   1 etudiant supergroup    900.6 K 2026-11-17 14:21 /retail-lake/raw/nifi/store_sales.dat
+900.6 K  900.6 K  /retail-lake/raw/nifi/store_sales.dat
+(code retour : 0)
+[2026-11-17 14:21:46] $ echo "SHA-256 HDFS : $(hdfs dfs -cat /retail-lake/raw/nifi/store_sales.dat | sha256sum | cut -d' ' -f1)"; echo "SHA-256 kit  : $(sha256sum retail_project/data_refresh/store_sales/store_sales.dat | cut -d' ' -f1)"
+SHA-256 HDFS : 3c71c010a17d15c90564ddb12be4a1286f494669198b55e782edef6f8e8b23df
+SHA-256 kit  : 3c71c010a17d15c90564ddb12be4a1286f494669198b55e782edef6f8e8b23df
+(code retour : 0)
+[2026-11-17 14:21:48] $ hdfs dfs -stat 'owner=%u permissions=%A size=%b modified=%y' /retail-lake/raw/nifi/store_sales.dat
+owner=etudiant permissions=rw-r--r-- size=922171 modified=2026-11-17 14:21:31
+(code retour : 0)
+[2026-11-17 14:21:48] ===== action : erreurs =====
+[2026-11-17 14:21:48] === Test E-a : dossier source inexistant dans GetFile ===
+[2026-11-17 14:21:48] processeur GetFile - lecture /data/nifi/input -> STOPPED
+[2026-11-17 14:21:48] propriétés modifiées sur GetFile - lecture /data/nifi/input : {'Input Directory': '/data/nifi/input_inexistant'} -> état INVALID ; erreurs de validation : ["'Input Directory' validated against '/data/nifi/input_inexistant' is invalid because Directory does not exist"]
+[2026-11-17 14:21:48] preuve écrite : Jour2/02_UC04_nifi/UC04_preuves/erreur_a_getfile_dossier_inexistant.json
+[2026-11-17 14:21:48] processeur GetFile - lecture /data/nifi/input -> RUNNING
+[2026-11-17 14:21:52] $ grep -h 'Cannot start GetFile' /opt/nifi/logs/nifi-app.log | tail -1
+2026-11-17 14:21:48,985 INFO [Timer-Driven Process Thread-4] o.a.n.controller.StandardProcessorNode Cannot start GetFile[id=e9ab6cc7-01a1-1000-6ae5-4de09620e655] because Processor is currently not valid (Validation State is INVALID: ['Input Directory' validated against '/data/nifi/input_inexistant' is invalid because Directory does not exist]). Will continue trying to start.
+(code retour : 0)
+[2026-11-17 14:21:52] état réel : STOPPED ; bulletins : []
+[2026-11-17 14:21:52] processeur GetFile - lecture /data/nifi/input -> STOPPED
+[2026-11-17 14:21:52] propriétés modifiées sur GetFile - lecture /data/nifi/input : {'Input Directory': '/data/nifi/input'} -> état VALID
+[2026-11-17 14:21:52] configuration rétablie : Input Directory=/data/nifi/input, état VALID
+[2026-11-17 14:21:52] === Test E-b : dépôt en double du même fichier (règle anti-écrasement) ===
+[2026-11-17 14:21:52] processeur LogAttribute - journal des échecs -> STOPPED
+[2026-11-17 14:21:52] processeur GetFile - lecture /data/nifi/input -> RUNNING
+[2026-11-17 14:22:37] processeur GetFile - lecture /data/nifi/input -> STOPPED
+[2026-11-17 14:22:37] statut avec le FlowFile en échec dans la file :
+Process Group « UC04 - Ingestion TPCx-BB (GetFile -> PutHDFS) » : entrées=0 sorties=0 en file=1 (900.56 KB)
+  - GetFile - lecture /data/nifi/input     état=Stopped  entrées=   0 (0 o) sorties=   2 (1844342 o) tâches=7
+  - LogAttribute - journal des échecs      état=Stopped  entrées=   0 (0 o) sorties=   0 (0 o) tâches=0
+  - PutHDFS - dépôt /retail-lake/raw/nifi  état=Running  entrées=   2 (1844342 o) sorties=   1 (922171 o) tâches=2
+  - file PutHDFS - dépôt /retail-lake/raw/nifi -> LogAttribute - journal des échecs [échecs de dépôt HDFS] : 1 (900.56 KB)
+  - file GetFile - lecture /data/nifi/input -> PutHDFS - dépôt /retail-lake/raw/nifi [fichiers lus] : 0 (0 bytes)
+[2026-11-17 14:22:37] preuve écrite : Jour2/02_UC04_nifi/UC04_preuves/erreur_b_bulletins_puthdfs.json
+[2026-11-17 14:22:37] bulletin WARNING PutHDFS - dépôt /retail-lake/raw/nifi : PutHDFS[id=e9ab6d10-01a1-1000-1658-83b811f1a7c8] penalizing FlowFile[filename=store_sales.dat] and routing to failure because file with same name already exists
+[2026-11-17 14:22:37] preuve écrite : Jour2/02_UC04_nifi/UC04_preuves/erreur_b_file_attente_failure.json
+[2026-11-17 14:22:37] processeur LogAttribute - journal des échecs -> RUNNING
+[2026-11-17 14:23:06] $ grep -h 'LogAttribute' /opt/nifi/logs/nifi-app.log | tail -3; grep -h -A25 'Standard FlowFile Attributes' /opt/nifi/logs/nifi-app.log | tail -26
+2026-11-17 14:22:37,919 INFO [NiFi Web Server-61] o.a.n.controller.StandardProcessorNode Desired State for LogAttribute[id=e9ab6e1c-01a1-1000-d3b5-d92bd7c55062] now set to RUNNING
+2026-11-17 14:22:37,919 INFO [Timer-Driven Process Thread-8] o.a.n.c.s.TimerDrivenSchedulingAgent Scheduled LogAttribute[id=e9ab6e1c-01a1-1000-d3b5-d92bd7c55062] to run with 1 threads
+2026-11-17 14:23:04,097 WARN [Timer-Driven Process Thread-5] o.a.n.processors.standard.LogAttribute LogAttribute[id=e9ab6e1c-01a1-1000-d3b5-d92bd7c55062] logging for FlowFile StandardFlowFileRecord[uuid=da0f48e8-0308-43ea-969d-98b64b95c0ee,claim=StandardContentClaim [resourceClaim=StandardResourceClaim[id=1794921754039-3, container=default, section=3], offset=0, length=922171],offset=0,name=store_sales.dat,size=922171]
+(code retour : 0)
+[2026-11-17 14:23:07] $ hdfs dfs -ls /retail-lake/raw/nifi
+Found 1 items
+-rw-r--r--   1 etudiant supergroup     922171 2026-11-17 14:21 /retail-lake/raw/nifi/store_sales.dat
+(code retour : 0)
+[2026-11-17 14:23:07] statut final :
+Process Group « UC04 - Ingestion TPCx-BB (GetFile -> PutHDFS) » : entrées=0 sorties=0 en file=0 (0 bytes)
+  - GetFile - lecture /data/nifi/input     état=Stopped  entrées=   0 (0 o) sorties=   2 (1844342 o) tâches=7
+  - LogAttribute - journal des échecs      état=Running  entrées=   1 (922171 o) sorties=   0 (0 o) tâches=1
+  - PutHDFS - dépôt /retail-lake/raw/nifi  état=Running  entrées=   2 (1844342 o) sorties=   1 (922171 o) tâches=2
+  - file PutHDFS - dépôt /retail-lake/raw/nifi -> LogAttribute - journal des échecs [échecs de dépôt HDFS] : 0 (0 bytes)
+  - file GetFile - lecture /data/nifi/input -> PutHDFS - dépôt /retail-lake/raw/nifi [fichiers lus] : 0 (0 bytes)
+[2026-11-17 14:23:07] ===== action : provenance =====
+[2026-11-17 14:23:07] preuve écrite : Jour2/02_UC04_nifi/UC04_preuves/provenance_flux_obligatoire_evenements.csv
+[2026-11-17 14:23:07] preuve écrite : Jour2/02_UC04_nifi/UC04_preuves/provenance_flux_obligatoire_evenement_send.json
+[2026-11-17 14:23:07] preuve écrite : Jour2/02_UC04_nifi/UC04_preuves/provenance_flux_obligatoire_lignage.json
+[2026-11-17 14:23:07] provenance : #4 11/17/2026 14:21:30.598 CET RECEIVE  GetFile - lecture /data/nifi/input uuid=ab165426-d1f1-4615-a7e2-de9c3dd106b5 fichier=store_sales.dat
+[2026-11-17 14:23:07] provenance : #5 11/17/2026 14:21:31.249 CET SEND     PutHDFS - dépôt /retail-lake/raw/nifi uuid=ab165426-d1f1-4615-a7e2-de9c3dd106b5 fichier=store_sales.dat
+[2026-11-17 14:23:07] provenance : #6 11/17/2026 14:21:31.250 CET ATTRIBUTES_MODIFIED PutHDFS - dépôt /retail-lake/raw/nifi uuid=ab165426-d1f1-4615-a7e2-de9c3dd106b5 fichier=store_sales.dat
+[2026-11-17 14:23:07] provenance : #7 11/17/2026 14:21:31.250 CET DROP     PutHDFS - dépôt /retail-lake/raw/nifi uuid=ab165426-d1f1-4615-a7e2-de9c3dd106b5 fichier=store_sales.dat
+[2026-11-17 14:23:07] provenance : #8 11/17/2026 14:22:34.043 CET RECEIVE  GetFile - lecture /data/nifi/input uuid=da0f48e8-0308-43ea-969d-98b64b95c0ee fichier=store_sales.dat
+[2026-11-17 14:23:07] provenance : #9 11/17/2026 14:23:04.098 CET DROP     LogAttribute - journal des échecs uuid=da0f48e8-0308-43ea-969d-98b64b95c0ee fichier=store_sales.dat

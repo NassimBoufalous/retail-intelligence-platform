@@ -1,0 +1,85 @@
+{
+  "nodes": [
+    {
+      "id": "4",
+      "flowFileUuid": "ab165426-d1f1-4615-a7e2-de9c3dd106b5",
+      "parentUuids": [],
+      "childUuids": [],
+      "type": "EVENT",
+      "eventType": "RECEIVE",
+      "componentType": "GetFile",
+      "millis": 1794921690598,
+      "timestamp": "11/17/2026 14:21:30.598 CET"
+    },
+    {
+      "id": "5",
+      "flowFileUuid": "ab165426-d1f1-4615-a7e2-de9c3dd106b5",
+      "parentUuids": [],
+      "childUuids": [],
+      "type": "EVENT",
+      "eventType": "SEND",
+      "componentType": "PutHDFS",
+      "millis": 1794921691249,
+      "timestamp": "11/17/2026 14:21:31.249 CET"
+    },
+    {
+      "id": "6",
+      "flowFileUuid": "ab165426-d1f1-4615-a7e2-de9c3dd106b5",
+      "parentUuids": [],
+      "childUuids": [],
+      "type": "EVENT",
+      "eventType": "ATTRIBUTES_MODIFIED",
+      "componentType": "PutHDFS",
+      "millis": 1794921691250,
+      "timestamp": "11/17/2026 14:21:31.250 CET"
+    },
+    {
+      "id": "ab165426-d1f1-4615-a7e2-de9c3dd106b5",
+      "flowFileUuid": "ab165426-d1f1-4615-a7e2-de9c3dd106b5",
+      "type": "FLOWFILE",
+      "millis": 1794921690598,
+      "timestamp": "11/17/2026 14:21:30.598 CET"
+    },
+    {
+      "id": "7",
+      "flowFileUuid": "ab165426-d1f1-4615-a7e2-de9c3dd106b5",
+      "parentUuids": [],
+      "childUuids": [],
+      "type": "EVENT",
+      "eventType": "DROP",
+      "componentType": "PutHDFS",
+      "millis": 1794921691250,
+      "timestamp": "11/17/2026 14:21:31.250 CET"
+    }
+  ],
+  "links": [
+    {
+      "sourceId": "6",
+      "targetId": "7",
+      "flowFileUuid": "ab165426-d1f1-4615-a7e2-de9c3dd106b5",
+      "timestamp": "11/17/2026 14:21:31.250 CET",
+      "millis": 1794921691250
+    },
+    {
+      "sourceId": "5",
+      "targetId": "6",
+      "flowFileUuid": "ab165426-d1f1-4615-a7e2-de9c3dd106b5",
+      "timestamp": "11/17/2026 14:21:31.250 CET",
+      "millis": 1794921691250
+    },
+    {
+      "sourceId": "4",
+      "targetId": "ab165426-d1f1-4615-a7e2-de9c3dd106b5",
+      "flowFileUuid": "ab165426-d1f1-4615-a7e2-de9c3dd106b5",
+      "timestamp": "11/17/2026 14:21:30.598 CET",
+      "millis": 1794921690598
+    },
+    {
+      "sourceId": "ab165426-d1f1-4615-a7e2-de9c3dd106b5",
+      "targetId": "5",
+      "flowFileUuid": "ab165426-d1f1-4615-a7e2-de9c3dd106b5",
+      "timestamp": "11/17/2026 14:21:31.249 CET",
+      "millis": 1794921691249
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+[2026-11-17 14:16:04] $ hdfs fsck /retail-lake/raw/tpcxbb/initial/inventory/inventory.dat -files -blocks -locations
+Connecting to namenode via http://localhost:9870/fsck?ugi=etudiant&files=1&blocks=1&locations=1&path=%2Fretail-lake%2Fraw%2Ftpcxbb%2Finitial%2Finventory%2Finventory.dat
+FSCK started by etudiant (auth:SIMPLE) from /127.0.0.1 for path /retail-lake/raw/tpcxbb/initial/inventory/inventory.dat at Tue Nov 17 14:16:04 CET 2026
+
+/retail-lake/raw/tpcxbb/initial/inventory/inventory.dat 424943678 bytes, replicated: replication=1, 4 block(s):  OK
+0. BP-2002823578-127.0.1.1-1794914113423:blk_1073741872_1048 len=134217728 Live_repl=1  [DatanodeInfoWithStorage[127.0.0.1:9866,DS-9b0eb997-c5de-4c28-9648-feb5ca135948,DISK]]
+1. BP-2002823578-127.0.1.1-1794914113423:blk_1073741873_1049 len=134217728 Live_repl=1  [DatanodeInfoWithStorage[127.0.0.1:9866,DS-9b0eb997-c5de-4c28-9648-feb5ca135948,DISK]]
+2. BP-2002823578-127.0.1.1-1794914113423:blk_1073741874_1050 len=134217728 Live_repl=1  [DatanodeInfoWithStorage[127.0.0.1:9866,DS-9b0eb997-c5de-4c28-9648-feb5ca135948,DISK]]
+3. BP-2002823578-127.0.1.1-1794914113423:blk_1073741875_1051 len=22290494 Live_repl=1  [DatanodeInfoWithStorage[127.0.0.1:9866,DS-9b0eb997-c5de-4c28-9648-feb5ca135948,DISK]]
+
+
+Status: HEALTHY
+ Number of data-nodes:	1
+ Number of racks:		1
+ Total dirs:			0
+ Total symlinks:		0
+
+Replicated Blocks:
+ Total size:	424943678 B
+ Total files:	1
+ Total blocks (validated):	4 (avg. block size 106235919 B)
+ Minimally replicated blocks:	4 (100.0 %)
+ Over-replicated blocks:	0 (0.0 %)
+ Under-replicated blocks:	0 (0.0 %)
+ Mis-replicated blocks:		0 (0.0 %)
+ Default replication factor:	1
+ Average block replication:	1.0
+ Missing blocks:		0
+ Corrupt blocks:		0
+ Missing replicas:		0 (0.0 %)
+ Blocks queued for replication:	0
+
+Erasure Coded Block Groups:
+ Total size:	0 B
+ Total files:	0
+ Total block groups (validated):	0
+ Minimally erasure-coded block groups:	0
+ Over-erasure-coded block groups:	0
+ Under-erasure-coded block groups:	0
+ Unsatisfactory placement block groups:	0
+ Average block group size:	0.0
+ Missing block groups:		0
+ Corrupt block groups:		0
+ Missing internal blocks:	0
+ Blocks queued for replication:	0
+FSCK ended at Tue Nov 17 14:16:04 CET 2026 in 9 milliseconds
+
+
+The filesystem under path '/retail-lake/raw/tpcxbb/initial/inventory/inventory.dat' is HEALTHY
+(code retour : 0)
+
+[2026-11-17 14:16:06] $ hdfs fsck /retail-lake/raw/tpcxbb/initial/store_sales/store_sales.dat -files -blocks | grep -E 'bytes|blk_|Total blocks|Status'
+Connecting to namenode via http://localhost:9870/fsck?ugi=etudiant&files=1&blocks=1&path=%2Fretail-lake%2Fraw%2Ftpcxbb%2Finitial%2Fstore_sales%2Fstore_sales.dat
+/retail-lake/raw/tpcxbb/initial/store_sales/store_sales.dat 92764700 bytes, replicated: replication=1, 1 block(s):  OK
+0. BP-2002823578-127.0.1.1-1794914113423:blk_1073741885_1061 len=92764700 Live_repl=1
+Status: HEALTHY
+ Total blocks (validated):	1 (avg. block size 92764700 B)
+(code retour : 0)
+
+[2026-11-17 14:16:08] $ hdfs fsck /retail-lake | grep -E 'Total size|Total files|Total blocks|Minimally|Under-replicated|Default replication|Average block|Corrupt|Status'
+Connecting to namenode via http://localhost:9870/fsck?ugi=etudiant&path=%2Fretail-lake
+Status: HEALTHY
+ Total size:	1034002829 B
+ Total files:	37
+ Total blocks (validated):	41 (avg. block size 25219581 B)
+ Minimally replicated blocks:	41 (100.0 %)
+ Under-replicated blocks:	0 (0.0 %)
+ Default replication factor:	1
+ Average block replication:	1.0
+ Corrupt blocks:		0
+ Total size:	0 B
+ Total files:	0
+ Minimally erasure-coded block groups:	0
+ Average block group size:	0.0
+ Corrupt block groups:		0
+(code retour : 0)
+
+[2026-11-17 14:16:08] $ find $HOME/hadoop-data/datanode -name 'blk_*' ! -name '*.meta' | wc -l | xargs echo 'fichiers blk_* sur le disque du DataNode :'; du -sh $HOME/hadoop-data/datanode
+fichiers blk_* sur le disque du DataNode : 41
+995M	/home/etudiant/hadoop-data/datanode
+(code retour : 0)
+
