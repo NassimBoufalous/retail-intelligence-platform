@@ -1,0 +1,34 @@
+2026-11-18 12:56:54 INFO Session Spark 4.3.0 (master=local[*]), lac=hdfs://localhost:9000/retail-lake
+2026-11-18 12:56:59 INFO date_dim : conversions de type en échec = aucune
+2026-11-18 12:57:04 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/date_dim
+2026-11-18 12:57:04 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/date_dim
+2026-11-18 12:57:05 INFO date_dim : bronze=109573 silver=109573 quarantaine=0 {}
+2026-11-18 12:57:06 INFO item : conversions de type en échec = aucune
+2026-11-18 12:57:09 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/item
+2026-11-18 12:57:10 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/item
+2026-11-18 12:57:10 INFO item : bronze=18000 silver=18000 quarantaine=0 {}
+2026-11-18 12:57:11 INFO store : conversions de type en échec = aucune
+2026-11-18 12:57:12 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/store
+2026-11-18 12:57:13 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/store
+2026-11-18 12:57:13 INFO store : bronze=12 silver=12 quarantaine=0 {}
+2026-11-18 12:57:13 INFO reason : conversions de type en échec = aucune
+2026-11-18 12:57:14 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/reason
+2026-11-18 12:57:14 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/reason
+2026-11-18 12:57:15 INFO reason : bronze=35 silver=35 quarantaine=0 {}
+2026-11-18 12:57:17 INFO store_sales : conversions de type en échec = aucune
+2026-11-18 12:57:30 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/store_sales
+2026-11-18 12:57:33 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/store_sales
+2026-11-18 12:57:37 INFO store_sales : bronze=674211 silver=674211 quarantaine=0 {}
+2026-11-18 12:57:39 INFO web_sales : conversions de type en échec = aucune
+2026-11-18 12:57:49 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/web_sales
+2026-11-18 12:57:55 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/web_sales
+2026-11-18 12:57:58 INFO web_sales : bronze=674931 silver=674931 quarantaine=0 {}
+2026-11-18 12:57:59 INFO store_returns : conversions de type en échec = aucune
+2026-11-18 12:58:02 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/store_returns
+2026-11-18 12:58:03 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/store_returns
+2026-11-18 12:58:04 INFO store_returns : bronze=38328 silver=38328 quarantaine=0 {}
+2026-11-18 12:58:05 INFO web_returns : conversions de type en échec = aucune
+2026-11-18 12:58:08 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/web_returns
+2026-11-18 12:58:09 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/web_returns
+2026-11-18 12:58:10 INFO web_returns : bronze=38887 silver=38887 quarantaine=0 {}
+2026-11-18 12:58:10 INFO Silver terminé : 8 tables

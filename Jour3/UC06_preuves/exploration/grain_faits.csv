@@ -1,0 +1,9 @@
+﻿table;cle_supposee;lignes;valeurs_distinctes;lignes_en_trop;lignes_cle_nulle;cle_unique
+store_sales;ss_ticket_number+ss_item_sk;674211;670029;4182;0;False
+web_sales;ws_order_number+ws_item_sk;674931;670816;4115;0;False
+store_returns;sr_ticket_number+sr_item_sk;38328;38168;160;0;False
+web_returns;wr_order_number+wr_item_sk;38887;38734;153;0;False
+item;i_item_sk;18000;18000;0;0;True
+store;s_store_sk;12;12;0;0;True
+date_dim;d_date_sk;109573;109573;0;0;True
+reason;r_reason_sk;35;35;0;0;True

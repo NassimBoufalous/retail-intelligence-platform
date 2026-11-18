@@ -1,0 +1,55 @@
+== Programme de test (TP §1.4.1) ==
+Version Spark : 4.3.0
++---------+----------------+
+|  magasin|chiffre_affaires|
++---------+----------------+
+|Magasin A|          1200.0|
+|Magasin B|           850.0|
+|Magasin C|          1600.0|
++---------+----------------+
+
+== Lecture d'un fichier réel : hdfs://localhost:9000/retail-lake/raw/tpcxbb/refresh/store_sales/store_sales.dat ==
+root
+ |-- _c0: integer (nullable = true)
+ |-- _c1: integer (nullable = true)
+ |-- _c2: integer (nullable = true)
+ |-- _c3: integer (nullable = true)
+ |-- _c4: integer (nullable = true)
+ |-- _c5: integer (nullable = true)
+ |-- _c6: integer (nullable = true)
+ |-- _c7: integer (nullable = true)
+ |-- _c8: integer (nullable = true)
+ |-- _c9: integer (nullable = true)
+ |-- _c10: integer (nullable = true)
+ |-- _c11: double (nullable = true)
+ |-- _c12: double (nullable = true)
+ |-- _c13: double (nullable = true)
+ |-- _c14: double (nullable = true)
+ |-- _c15: double (nullable = true)
+ |-- _c16: double (nullable = true)
+ |-- _c17: double (nullable = true)
+ |-- _c18: double (nullable = true)
+ |-- _c19: double (nullable = true)
+ |-- _c20: double (nullable = true)
+ |-- _c21: double (nullable = true)
+ |-- _c22: double (nullable = true)
+
++-----+-----+-----+-----+-------+---+-----+---+---+-----+----+-----+-----+-----+-------+-------+-------+-------+-----+------+------+------+--------+
+|  _c0|  _c1|  _c2|  _c3|    _c4|_c5|  _c6|_c7|_c8|  _c9|_c10| _c11| _c12| _c13|   _c14|   _c15|   _c16|   _c17| _c18|  _c19|  _c20|  _c21|    _c22|
++-----+-----+-----+-----+-------+---+-----+---+---+-----+----+-----+-----+-----+-------+-------+-------+-------+-----+------+------+------+--------+
+|38697|21281|12731|54531|1475324|178|47932| 11|210|89100|  52|49.36|60.22|24.09|1878.76|1252.68|2566.72|3131.44|19.92|588.76|663.92|683.84| -1902.8|
+|38697|21281|13894|54531|1475324|178|47932| 11| 39|89100|  28|57.39|67.72|11.51|1573.88| 322.28|1606.92|1896.16|19.34|   0.0|322.28|341.62|-1284.64|
+|38697|21281|10166|54531|1475324|178|47932| 11|217|89100|  31|39.26|60.46|42.93| 543.43|1330.83|1217.06|1874.26|19.96|665.42|665.41|685.37| -551.65|
++-----+-----+-----+-----+-------+---+-----+---+---+-----+----+-----+-----+-----+-------+-------+-------+-------+-----+------+------+------+--------+
+only showing top 3 rows
+Nombre de lignes : 6632
+== Écriture puis relecture Parquet : hdfs://localhost:9000/retail-lake/logs/transformation/test_ecriture_parquet ==
++---------+----------------+--------------------------+
+|  magasin|chiffre_affaires|                  ecrit_le|
++---------+----------------+--------------------------+
+|Magasin A|          1200.0|2026-11-18 12:53:44.479759|
+|Magasin B|           850.0|2026-11-18 12:53:44.479759|
+|Magasin C|          1600.0|2026-11-18 12:53:44.479759|
++---------+----------------+--------------------------+
+
+Lignes relues : 3

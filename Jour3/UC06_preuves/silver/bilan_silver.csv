@@ -1,0 +1,9 @@
+﻿table;lignes_bronze;lignes_silver;lignes_quarantaine;bronze_egal_silver_plus_quarantaine;lignes_relues;motifs_quarantaine;conversions_en_echec;colonnes;fichiers_parquet;octets_parquet;partitionnement;chemin
+date_dim;109573;109573;0;True;109573;aucun;0;32;4;3818555;aucun;hdfs://localhost:9000/retail-lake/silver/date_dim
+item;18000;18000;0;True;18000;aucun;0;26;3;3627694;aucun;hdfs://localhost:9000/retail-lake/silver/item
+store;12;12;0;True;12;aucun;0;33;1;12940;aucun;hdfs://localhost:9000/retail-lake/silver/store
+reason;35;35;0;True;35;aucun;0;7;1;5346;aucun;hdfs://localhost:9000/retail-lake/silver/reason
+store_sales;674211;674211;0;True;674211;aucun;0;33;21;82247889;annee;hdfs://localhost:9000/retail-lake/silver/store_sales
+web_sales;674931;674931;0;True;674931;aucun;0;45;21;96423872;annee;hdfs://localhost:9000/retail-lake/silver/web_sales
+store_returns;38328;38328;0;True;38328;aucun;0;33;16;5773954;aucun;hdfs://localhost:9000/retail-lake/silver/store_returns
+web_returns;38887;38887;0;True;38887;aucun;0;37;16;6635662;aucun;hdfs://localhost:9000/retail-lake/silver/web_returns

@@ -1,0 +1,53 @@
+# Volumes par zone (2026-11-18 12:59:34)
+987.0 M  987.0 M  /retail-lake/raw
+248.9 M  248.9 M  /retail-lake/bronze
+189.3 M  189.3 M  /retail-lake/silver
+126.4 M  126.4 M  /retail-lake/gold
+39.1 K   39.1 K   /retail-lake/quality
+12.7 K   12.7 K   /retail-lake/logs
+
+# Bronze : fichiers copiés depuis Raw
+-rw-r--r--   1 etudiant supergroup          0 2026-11-18 12:54 /retail-lake/bronze/tpcxbb/_manifeste/ingest_date=2026-11-18/_SUCCESS
+-rw-r--r--   1 etudiant supergroup       6213 2026-11-18 12:54 /retail-lake/bronze/tpcxbb/_manifeste/ingest_date=2026-11-18/part-00000-dd57de4a-1fbf-4e2f-b5bc-5f62465b4ad6-c000.csv
+-rw-r--r--   1 etudiant supergroup   15395800 2026-11-18 12:20 /retail-lake/bronze/tpcxbb/initial/date_dim/ingest_date=2026-11-18/date_dim.dat
+-rw-r--r--   1 etudiant supergroup    6799286 2026-11-18 12:20 /retail-lake/bronze/tpcxbb/initial/item/ingest_date=2026-11-18/item.dat
+-rw-r--r--   1 etudiant supergroup       3105 2026-11-18 12:20 /retail-lake/bronze/tpcxbb/initial/reason/ingest_date=2026-11-18/reason.dat
+-rw-r--r--   1 etudiant supergroup       3386 2026-11-18 12:20 /retail-lake/bronze/tpcxbb/initial/store/ingest_date=2026-11-18/store.dat
+-rw-r--r--   1 etudiant supergroup    4337400 2026-11-18 12:20 /retail-lake/bronze/tpcxbb/initial/store_returns/ingest_date=2026-11-18/store_returns.dat
+-rw-r--r--   1 etudiant supergroup   92764700 2026-11-18 12:20 /retail-lake/bronze/tpcxbb/initial/store_sales/ingest_date=2026-11-18/store_sales.dat
+-rw-r--r--   1 etudiant supergroup    5383513 2026-11-18 12:20 /retail-lake/bronze/tpcxbb/initial/web_returns/ingest_date=2026-11-18/web_returns.dat
+-rw-r--r--   1 etudiant supergroup  133790574 2026-11-18 12:20 /retail-lake/bronze/tpcxbb/initial/web_sales/ingest_date=2026-11-18/web_sales.dat
+-rw-r--r--   1 etudiant supergroup      69173 2026-11-18 12:20 /retail-lake/bronze/tpcxbb/refresh/item/ingest_date=2026-11-18/item.dat
+-rw-r--r--   1 etudiant supergroup      48825 2026-11-18 12:20 /retail-lake/bronze/tpcxbb/refresh/store_returns/ingest_date=2026-11-18/store_returns.dat
+-rw-r--r--   1 etudiant supergroup     922171 2026-11-18 12:20 /retail-lake/bronze/tpcxbb/refresh/store_sales/ingest_date=2026-11-18/store_sales.dat
+-rw-r--r--   1 etudiant supergroup      55952 2026-11-18 12:20 /retail-lake/bronze/tpcxbb/refresh/web_returns/ingest_date=2026-11-18/web_returns.dat
+-rw-r--r--   1 etudiant supergroup    1378425 2026-11-18 12:20 /retail-lake/bronze/tpcxbb/refresh/web_sales/ingest_date=2026-11-18/web_sales.dat
+
+# Silver : tables Parquet (volume par table)
+3.6 M   3.6 M   /retail-lake/silver/date_dim
+3.5 M   3.5 M   /retail-lake/silver/item
+5.2 K   5.2 K   /retail-lake/silver/reason
+12.6 K  12.6 K  /retail-lake/silver/store
+5.5 M   5.5 M   /retail-lake/silver/store_returns
+78.4 M  78.4 M  /retail-lake/silver/store_sales
+6.3 M   6.3 M   /retail-lake/silver/web_returns
+92.0 M  92.0 M  /retail-lake/silver/web_sales
+
+# Gold : jeux Parquet (volume par jeu)
+126.3 M  126.3 M  /retail-lake/gold/fait_ventes
+7.2 K    7.2 K    /retail-lake/gold/retours_categorie
+5.7 K    5.7 K    /retail-lake/gold/retours_motif
+4.7 K    4.7 K    /retail-lake/gold/ventes_categorie_annee
+6.9 K    6.9 K    /retail-lake/gold/ventes_magasin_annee
+8.2 K    8.2 K    /retail-lake/gold/ventes_mensuelles_canal
+
+# Quality : quarantaine et résultats des contrôles
+3.2 K   3.2 K   /retail-lake/quality/quarantaine/date_dim
+2.8 K   2.8 K   /retail-lake/quality/quarantaine/item
+1016    1016    /retail-lake/quality/quarantaine/reason
+3.5 K   3.5 K   /retail-lake/quality/quarantaine/store
+3.6 K   3.6 K   /retail-lake/quality/quarantaine/store_returns
+3.6 K   3.6 K   /retail-lake/quality/quarantaine/store_sales
+4.1 K   4.1 K   /retail-lake/quality/quarantaine/web_returns
+4.9 K   4.9 K   /retail-lake/quality/quarantaine/web_sales
+12.5 K  12.5 K  /retail-lake/quality/controles/run=2026-11-18

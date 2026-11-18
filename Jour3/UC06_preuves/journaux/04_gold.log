@@ -1,0 +1,12 @@
+2026-11-18 12:58:16 INFO Session Spark 4.3.0 (master=local[*]), lac=hdfs://localhost:9000/retail-lake
+2026-11-18 12:58:23 INFO Jointure fait_ventes x item (catégorie) : {'jointure': 'fait_ventes x item (catégorie)', 'cle_gauche': 'item_sk', 'cle_droite': 'i_item_sk', 'cardinalite_attendue': 'N:1', 'type': 'left', 'cle_droite_unique': True, 'lignes_avant': 1349142, 'lignes_apres': 1349142, 'lignes_conservees': True, 'non_rapprochees': 0}
+2026-11-18 12:58:32 INFO Écrit : hdfs://localhost:9000/retail-lake/gold/fait_ventes
+2026-11-18 12:58:36 INFO Écrit : hdfs://localhost:9000/retail-lake/gold/ventes_mensuelles_canal
+2026-11-18 12:58:38 INFO Écrit : hdfs://localhost:9000/retail-lake/gold/ventes_categorie_annee
+2026-11-18 12:58:40 INFO Jointure fait_ventes(magasin) x store : {'jointure': 'fait_ventes(magasin) x store', 'cle_gauche': 'store_sk', 'cle_droite': 's_store_sk', 'cardinalite_attendue': 'N:1', 'type': 'left', 'cle_droite_unique': True, 'lignes_avant': 674211, 'lignes_apres': 674211, 'lignes_conservees': True, 'non_rapprochees': 0}
+2026-11-18 12:58:41 INFO Écrit : hdfs://localhost:9000/retail-lake/gold/ventes_magasin_annee
+2026-11-18 12:58:42 INFO Jointure retours x item (catégorie) : {'jointure': 'retours x item (catégorie)', 'cle_gauche': 'item_sk', 'cle_droite': 'i_item_sk', 'cardinalite_attendue': 'N:1', 'type': 'left', 'cle_droite_unique': True, 'lignes_avant': 77215, 'lignes_apres': 77215, 'lignes_conservees': True, 'non_rapprochees': 0}
+2026-11-18 12:58:44 INFO Écrit : hdfs://localhost:9000/retail-lake/gold/retours_categorie
+2026-11-18 12:58:44 INFO Jointure retours x reason (motif) : {'jointure': 'retours x reason (motif)', 'cle_gauche': 'reason_sk', 'cle_droite': 'r_reason_sk', 'cardinalite_attendue': 'N:1', 'type': 'left', 'cle_droite_unique': True, 'lignes_avant': 77215, 'lignes_apres': 77215, 'lignes_conservees': True, 'non_rapprochees': 18}
+2026-11-18 12:58:45 INFO Écrit : hdfs://localhost:9000/retail-lake/gold/retours_motif
+2026-11-18 12:58:46 INFO Gold terminé : ['fait_ventes', 'ventes_mensuelles_canal', 'ventes_categorie_annee', 'ventes_magasin_annee', 'retours_categorie', 'retours_motif']

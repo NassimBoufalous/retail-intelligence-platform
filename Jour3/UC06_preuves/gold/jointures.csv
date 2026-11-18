@@ -1,0 +1,5 @@
+﻿jointure;cle_gauche;cle_droite;cardinalite_attendue;type;cle_droite_unique;lignes_avant;lignes_apres;lignes_conservees;non_rapprochees
+fait_ventes x item (catégorie);item_sk;i_item_sk;N:1;left;True;1349142;1349142;True;0
+fait_ventes(magasin) x store;store_sk;s_store_sk;N:1;left;True;674211;674211;True;0
+retours x item (catégorie);item_sk;i_item_sk;N:1;left;True;77215;77215;True;0
+retours x reason (motif);reason_sk;r_reason_sk;N:1;left;True;77215;77215;True;18

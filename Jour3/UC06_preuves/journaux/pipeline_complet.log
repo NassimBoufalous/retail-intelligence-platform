@@ -1,0 +1,249 @@
+==================== 00_test_environnement.py ====================
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/11/18 12:53:36 WARN Utils: Your hostname, retail-lake-vm, resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+26/11/18 12:53:36 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/18 12:53:37 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2026-11-18 12:53:39 INFO Session Spark 4.3.0 (master=local[*]), lac=hdfs://localhost:9000/retail-lake
+2026-11-18 12:53:45 INFO Écrit : hdfs://localhost:9000/retail-lake/logs/transformation/test_ecriture_parquet
+2026-11-18 12:53:46 INFO Fiche d'environnement : {'date': '2026-11-18 12:53:45', 'systeme': 'Linux 6.6.87.2-microsoft-standard-WSL2', 'distribution': 'Ubuntu 24.04.5 LTS', 'machine': 'retail-lake-vm', 'cpu_logiques': 16, 'python': '3.12.3', 'python_executable': '/home/etudiant/venv-tp3/bin/python', 'pyspark': '4.3.0', 'spark': '4.3.0', 'scala': '2.13.18', 'java_spark': '17.0.21.0.3', 'java_home': '/usr/lib/jvm/java-17-openjdk-amd64', 'client_hadoop_de_spark': '3.5.0', 'hadoop_hdfs_serveur': 'Hadoop 3.5.0', 'master': 'local[*]', 'parallelisme_par_defaut': 16, 'spark_conf': {'spark.sql.shuffle.partitions': '16', 'spark.sql.session.timeZone': 'Europe/Paris', 'spark.sql.parquet.compression.codec': 'snappy', 'spark.driver.memory': '6g', 'spark.ui.showConsoleProgress': 'false'}, 'interface': "scripts Python (spark-submit / python) + JupyterLab pour l'exploration", 'lac': 'hdfs://localhost:9000/retail-lake', 'chemins': {'raw': 'hdfs://localhost:9000/retail-lake/raw/tpcxbb', 'bronze': 'hdfs://localhost:9000/retail-lake/bronze/tpcxbb', 'silver': 'hdfs://localhost:9000/retail-lake/silver', 'gold': 'hdfs://localhost:9000/retail-lake/gold', 'quality': 'hdfs://localhost:9000/retail-lake/quality', 'logs': 'hdfs://localhost:9000/retail-lake/logs/transformation'}, 'test_ecriture': 'hdfs://localhost:9000/retail-lake/logs/transformation/test_ecriture_parquet'}
+---- 00_test_environnement.py terminé en 12 s
+==================== 01_bronze.py ====================
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/11/18 12:53:47 WARN Utils: Your hostname, retail-lake-vm, resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+26/11/18 12:53:47 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/18 12:53:48 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2026-11-18 12:53:51 INFO Session Spark 4.3.0 (master=local[*]), lac=hdfs://localhost:9000/retail-lake
+2026-11-18 12:53:55 INFO initial/store_sales : déjà présent (identique), 667579 lignes, champs 23-23/23, OK
+2026-11-18 12:53:56 INFO initial/web_sales : déjà présent (identique), 668052 lignes, champs 34-34/34, OK
+2026-11-18 12:53:56 INFO initial/store_returns : déjà présent (identique), 37902 lignes, champs 20-20/20, OK
+2026-11-18 12:53:56 INFO initial/web_returns : déjà présent (identique), 38487 lignes, champs 24-24/24, OK
+2026-11-18 12:53:57 INFO initial/item : déjà présent (identique), 17820 lignes, champs 22-22/22, OK
+2026-11-18 12:53:57 INFO initial/store : déjà présent (identique), 12 lignes, champs 29-29/29, OK
+2026-11-18 12:53:57 INFO initial/date_dim : déjà présent (identique), 109573 lignes, champs 28-28/28, OK
+2026-11-18 12:53:57 INFO initial/reason : déjà présent (identique), 35 lignes, champs 3-3/3, OK
+2026-11-18 12:53:58 INFO refresh/store_sales : déjà présent (identique), 6632 lignes, champs 23-23/23, OK
+2026-11-18 12:53:58 INFO refresh/web_sales : déjà présent (identique), 6879 lignes, champs 34-34/34, OK
+2026-11-18 12:53:58 INFO refresh/store_returns : déjà présent (identique), 426 lignes, champs 20-20/20, OK
+2026-11-18 12:53:58 INFO refresh/web_returns : déjà présent (identique), 400 lignes, champs 24-24/24, OK
+2026-11-18 12:53:58 INFO refresh/item : déjà présent (identique), 180 lignes, champs 22-22/22, OK
+2026-11-18 12:53:58 INFO refresh/store : absent du lot (normal, le refresh ne contient que 11 tables)
+2026-11-18 12:53:58 INFO refresh/date_dim : absent du lot (normal, le refresh ne contient que 11 tables)
+2026-11-18 12:53:58 INFO refresh/reason : absent du lot (normal, le refresh ne contient que 11 tables)
+2026-11-18 12:54:00 INFO Bronze : 13 fichiers, 0 anomalie(s)
+---- 01_bronze.py terminé en 15 s
+==================== 02_inventaire.py ====================
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/11/18 12:54:03 WARN Utils: Your hostname, retail-lake-vm, resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+26/11/18 12:54:03 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/18 12:54:03 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2026-11-18 12:54:09 INFO Session Spark 4.3.0 (master=local[*]), lac=hdfs://localhost:9000/retail-lake
+2026-11-18 12:54:21 INFO store_sales : conversions de type en échec = aucune
+2026-11-18 12:55:10 INFO store_sales : 674211 lignes, 23 col., clés candidates=[], doublons exacts=0, grain ss_ticket_number+ss_item_sk=NON unique
+2026-11-18 12:55:14 INFO web_sales : conversions de type en échec = aucune
+2026-11-18 12:56:11 INFO web_sales : 674931 lignes, 34 col., clés candidates=[], doublons exacts=0, grain ws_order_number+ws_item_sk=NON unique
+2026-11-18 12:56:12 INFO store_returns : conversions de type en échec = aucune
+2026-11-18 12:56:17 INFO store_returns : 38328 lignes, 20 col., clés candidates=[], doublons exacts=0, grain sr_ticket_number+sr_item_sk=NON unique
+2026-11-18 12:56:18 INFO web_returns : conversions de type en échec = aucune
+2026-11-18 12:56:26 INFO web_returns : 38887 lignes, 24 col., clés candidates=[], doublons exacts=0, grain wr_order_number+wr_item_sk=NON unique
+2026-11-18 12:56:27 INFO item : conversions de type en échec = aucune
+2026-11-18 12:56:32 INFO item : 18000 lignes, 22 col., clés candidates=['i_item_sk', 'i_item_id', 'i_product_name'], doublons exacts=0, grain i_item_sk=unique
+2026-11-18 12:56:32 INFO store : conversions de type en échec = aucune
+2026-11-18 12:56:34 INFO store : 12 lignes, 29 col., clés candidates=['s_store_sk', 's_store_id', 's_closed_date_sk', 's_store_name', 's_floor_space', 's_manager', 's_market_desc', 's_market_manager', 's_street_number', 's_street_name', 's_street_type', 's_suite_number', 's_city', 's_county', 's_zip'], doublons exacts=0, grain s_store_sk=unique
+2026-11-18 12:56:35 INFO date_dim : conversions de type en échec = aucune
+2026-11-18 12:56:48 INFO date_dim : 109573 lignes, 28 col., clés candidates=['d_date_sk', 'd_date_id', 'd_date'], doublons exacts=0, grain d_date_sk=unique
+2026-11-18 12:56:48 INFO reason : conversions de type en échec = aucune
+2026-11-18 12:56:49 INFO reason : 35 lignes, 3 col., clés candidates=['r_reason_sk', 'r_reason_id', 'r_reason_desc'], doublons exacts=0, grain r_reason_sk=unique
+---- 02_inventaire.py terminé en 168 s
+==================== 03_silver.py ====================
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/11/18 12:56:51 WARN Utils: Your hostname, retail-lake-vm, resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+26/11/18 12:56:51 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/18 12:56:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2026-11-18 12:56:54 INFO Session Spark 4.3.0 (master=local[*]), lac=hdfs://localhost:9000/retail-lake
+2026-11-18 12:56:59 INFO date_dim : conversions de type en échec = aucune
+2026-11-18 12:57:04 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/date_dim
+2026-11-18 12:57:04 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/date_dim
+2026-11-18 12:57:05 INFO date_dim : bronze=109573 silver=109573 quarantaine=0 {}
+2026-11-18 12:57:06 INFO item : conversions de type en échec = aucune
+2026-11-18 12:57:09 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/item
+2026-11-18 12:57:10 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/item
+2026-11-18 12:57:10 INFO item : bronze=18000 silver=18000 quarantaine=0 {}
+2026-11-18 12:57:11 INFO store : conversions de type en échec = aucune
+2026-11-18 12:57:12 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/store
+2026-11-18 12:57:13 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/store
+2026-11-18 12:57:13 INFO store : bronze=12 silver=12 quarantaine=0 {}
+2026-11-18 12:57:13 INFO reason : conversions de type en échec = aucune
+2026-11-18 12:57:14 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/reason
+2026-11-18 12:57:14 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/reason
+2026-11-18 12:57:15 INFO reason : bronze=35 silver=35 quarantaine=0 {}
+2026-11-18 12:57:17 INFO store_sales : conversions de type en échec = aucune
+2026-11-18 12:57:30 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/store_sales
+2026-11-18 12:57:33 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/store_sales
+2026-11-18 12:57:37 INFO store_sales : bronze=674211 silver=674211 quarantaine=0 {}
+2026-11-18 12:57:39 INFO web_sales : conversions de type en échec = aucune
+2026-11-18 12:57:49 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/web_sales
+2026-11-18 12:57:55 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/web_sales
+2026-11-18 12:57:58 INFO web_sales : bronze=674931 silver=674931 quarantaine=0 {}
+2026-11-18 12:57:59 INFO store_returns : conversions de type en échec = aucune
+2026-11-18 12:58:02 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/store_returns
+2026-11-18 12:58:03 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/store_returns
+2026-11-18 12:58:04 INFO store_returns : bronze=38328 silver=38328 quarantaine=0 {}
+2026-11-18 12:58:05 INFO web_returns : conversions de type en échec = aucune
+2026-11-18 12:58:08 INFO Écrit : hdfs://localhost:9000/retail-lake/silver/web_returns
+2026-11-18 12:58:09 INFO Écrit : hdfs://localhost:9000/retail-lake/quality/quarantaine/web_returns
+2026-11-18 12:58:10 INFO web_returns : bronze=38887 silver=38887 quarantaine=0 {}
+2026-11-18 12:58:10 INFO Silver terminé : 8 tables
+---- 03_silver.py terminé en 82 s
+==================== 04_gold.py ====================
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/11/18 12:58:12 WARN Utils: Your hostname, retail-lake-vm, resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+26/11/18 12:58:12 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/18 12:58:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2026-11-18 12:58:16 INFO Session Spark 4.3.0 (master=local[*]), lac=hdfs://localhost:9000/retail-lake
+2026-11-18 12:58:23 INFO Jointure fait_ventes x item (catégorie) : {'jointure': 'fait_ventes x item (catégorie)', 'cle_gauche': 'item_sk', 'cle_droite': 'i_item_sk', 'cardinalite_attendue': 'N:1', 'type': 'left', 'cle_droite_unique': True, 'lignes_avant': 1349142, 'lignes_apres': 1349142, 'lignes_conservees': True, 'non_rapprochees': 0}
+2026-11-18 12:58:32 INFO Écrit : hdfs://localhost:9000/retail-lake/gold/fait_ventes
+2026-11-18 12:58:36 INFO Écrit : hdfs://localhost:9000/retail-lake/gold/ventes_mensuelles_canal
+2026-11-18 12:58:38 INFO Écrit : hdfs://localhost:9000/retail-lake/gold/ventes_categorie_annee
+2026-11-18 12:58:40 INFO Jointure fait_ventes(magasin) x store : {'jointure': 'fait_ventes(magasin) x store', 'cle_gauche': 'store_sk', 'cle_droite': 's_store_sk', 'cardinalite_attendue': 'N:1', 'type': 'left', 'cle_droite_unique': True, 'lignes_avant': 674211, 'lignes_apres': 674211, 'lignes_conservees': True, 'non_rapprochees': 0}
+2026-11-18 12:58:41 INFO Écrit : hdfs://localhost:9000/retail-lake/gold/ventes_magasin_annee
+2026-11-18 12:58:42 INFO Jointure retours x item (catégorie) : {'jointure': 'retours x item (catégorie)', 'cle_gauche': 'item_sk', 'cle_droite': 'i_item_sk', 'cardinalite_attendue': 'N:1', 'type': 'left', 'cle_droite_unique': True, 'lignes_avant': 77215, 'lignes_apres': 77215, 'lignes_conservees': True, 'non_rapprochees': 0}
+2026-11-18 12:58:44 INFO Écrit : hdfs://localhost:9000/retail-lake/gold/retours_categorie
+2026-11-18 12:58:44 INFO Jointure retours x reason (motif) : {'jointure': 'retours x reason (motif)', 'cle_gauche': 'reason_sk', 'cle_droite': 'r_reason_sk', 'cardinalite_attendue': 'N:1', 'type': 'left', 'cle_droite_unique': True, 'lignes_avant': 77215, 'lignes_apres': 77215, 'lignes_conservees': True, 'non_rapprochees': 18}
+2026-11-18 12:58:45 INFO Écrit : hdfs://localhost:9000/retail-lake/gold/retours_motif
+2026-11-18 12:58:46 INFO Gold terminé : ['fait_ventes', 'ventes_mensuelles_canal', 'ventes_categorie_annee', 'ventes_magasin_annee', 'retours_categorie', 'retours_motif']
+---- 04_gold.py terminé en 36 s
+==================== 05_qualite.py ====================
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/11/18 12:58:48 WARN Utils: Your hostname, retail-lake-vm, resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+26/11/18 12:58:48 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/18 12:58:49 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2026-11-18 12:58:51 INFO Session Spark 4.3.0 (master=local[*]), lac=hdfs://localhost:9000/retail-lake
+2026-11-18 12:58:55 INFO Q01 Complétude silver/store_sales           0 ligne(s) -> OK
+2026-11-18 12:58:55 INFO Q02 Complétude silver/store_sales           159 (0.024 %) -> INFO
+2026-11-18 12:58:56 INFO Q01 Complétude silver/web_sales             0 ligne(s) -> OK
+2026-11-18 12:58:56 INFO Q02 Complétude silver/web_sales             123 (0.018 %) -> INFO
+2026-11-18 12:58:56 INFO Q03 Complétude silver/item                  0 -> OK
+2026-11-18 12:58:56 INFO Q03 Complétude silver/item                  0 -> OK
+2026-11-18 12:58:56 INFO Q03 Complétude silver/item                  0 -> OK
+2026-11-18 12:58:56 INFO Q03 Complétude silver/store                 0 -> OK
+2026-11-18 12:58:56 INFO Q03 Complétude silver/store                 0 -> OK
+2026-11-18 12:58:56 INFO Q03 Complétude silver/reason                0 -> OK
+2026-11-18 12:58:57 INFO Q04 Complétude silver/store_returns         11 -> INFO
+2026-11-18 12:58:57 INFO Q04 Complétude silver/web_returns           7 -> INFO
+2026-11-18 12:58:57 INFO Q05 Unicité    silver/store_sales           674211 lignes, 674211 clés distinctes -> OK
+2026-11-18 12:58:58 INFO Q05 Unicité    silver/web_sales             674931 lignes, 674931 clés distinctes -> OK
+2026-11-18 12:58:58 INFO Q05 Unicité    silver/store_returns         38328 lignes, 38328 clés distinctes -> OK
+2026-11-18 12:58:58 INFO Q05 Unicité    silver/web_returns           38887 lignes, 38887 clés distinctes -> OK
+2026-11-18 12:58:59 INFO Q06 Unicité    silver/item                  18000 / 18000 -> OK
+2026-11-18 12:58:59 INFO Q06 Unicité    silver/store                 12 / 12 -> OK
+2026-11-18 12:58:59 INFO Q06 Unicité    silver/date_dim              109573 / 109573 -> OK
+2026-11-18 12:58:59 INFO Q06 Unicité    silver/reason                35 / 35 -> OK
+2026-11-18 12:58:59 INFO Q06 Unicité    silver/item                  18000 / 18000 -> OK
+2026-11-18 12:59:00 INFO Q07 Unicité    silver/store_sales           4182 lignes en trop -> INFO
+2026-11-18 12:59:00 INFO Q07 Unicité    silver/web_sales             4115 lignes en trop -> INFO
+2026-11-18 12:59:00 INFO Q08 Validité   silver/store_sales           0 colonne(s) en écart [] -> OK
+2026-11-18 12:59:00 INFO Q08 Validité   silver/web_sales             0 colonne(s) en écart [] -> OK
+2026-11-18 12:59:00 INFO Q08 Validité   silver/store_returns         0 colonne(s) en écart [] -> OK
+2026-11-18 12:59:00 INFO Q08 Validité   silver/web_returns           0 colonne(s) en écart [] -> OK
+2026-11-18 12:59:00 INFO Q08 Validité   silver/item                  0 colonne(s) en écart [] -> OK
+2026-11-18 12:59:00 INFO Q08 Validité   silver/store                 0 colonne(s) en écart [] -> OK
+2026-11-18 12:59:00 INFO Q08 Validité   silver/date_dim              0 colonne(s) en écart [] -> OK
+2026-11-18 12:59:00 INFO Q08 Validité   silver/reason                0 colonne(s) en écart [] -> OK
+2026-11-18 12:59:00 INFO Q09 Validité   silver/store_sales           0 -> OK
+2026-11-18 12:59:01 INFO Q10 Validité   silver/store_sales           0 -> OK
+2026-11-18 12:59:01 INFO Q11 Validité   silver/store_sales           2001-01-01 -> 2005-12-31 -> OK
+2026-11-18 12:59:01 INFO Q09 Validité   silver/web_sales             0 -> OK
+2026-11-18 12:59:01 INFO Q10 Validité   silver/web_sales             0 -> OK
+2026-11-18 12:59:01 INFO Q11 Validité   silver/web_sales             2001-01-01 -> 2005-12-31 -> OK
+2026-11-18 12:59:01 INFO Q12 Validité   silver/date_dim              0 -> OK
+2026-11-18 12:59:01 INFO Q13 Cohérence  silver/store_sales           0 -> OK
+2026-11-18 12:59:02 INFO Q14 Cohérence  silver/store_sales           0 -> OK
+2026-11-18 12:59:02 INFO Q15 Cohérence  silver/store_sales           0 -> OK
+2026-11-18 12:59:02 INFO Q16 Cohérence  silver/store_sales           500889 (74.3 %) -> INFO
+2026-11-18 12:59:06 INFO Q17 Cohérence  silver/store_sales           0 document(s) incohérent(s) -> OK
+2026-11-18 12:59:06 INFO Q13 Cohérence  silver/web_sales             0 -> OK
+2026-11-18 12:59:06 INFO Q14 Cohérence  silver/web_sales             0 -> OK
+2026-11-18 12:59:06 INFO Q15 Cohérence  silver/web_sales             0 -> OK
+2026-11-18 12:59:06 INFO Q16 Cohérence  silver/web_sales             411338 (60.9 %) -> INFO
+2026-11-18 12:59:06 INFO Q17 Cohérence  silver/web_sales             0 document(s) incohérent(s) -> OK
+2026-11-18 12:59:06 INFO Q18 Cohérence  silver/web_sales             1 à 120 jours, 0 négatif(s) -> OK
+2026-11-18 12:59:06 INFO Q19 Cohérence  silver/store_returns         0 -> OK
+2026-11-18 12:59:06 INFO Q19 Cohérence  silver/web_returns           0 -> OK
+2026-11-18 12:59:08 INFO Q20 Cohérence  silver/store_returns         2 couple(s) (doc 52301 article 10002 : 45 rendus pour 32 vendus; doc 57158 article 10001 : 43 rendus pour 34 vendus) -> ANOMALIE
+2026-11-18 12:59:08 INFO Q20 Cohérence  silver/web_returns           0 couple(s)  -> OK
+2026-11-18 12:59:08 INFO Q21 Volume     silver/date_dim              109573 = 109573 + 0 ; relu 109573 -> OK
+2026-11-18 12:59:08 INFO Q21 Volume     silver/item                  18000 = 18000 + 0 ; relu 18000 -> OK
+2026-11-18 12:59:08 INFO Q21 Volume     silver/store                 12 = 12 + 0 ; relu 12 -> OK
+2026-11-18 12:59:08 INFO Q21 Volume     silver/reason                35 = 35 + 0 ; relu 35 -> OK
+2026-11-18 12:59:08 INFO Q21 Volume     silver/store_sales           674211 = 674211 + 0 ; relu 674211 -> OK
+2026-11-18 12:59:08 INFO Q21 Volume     silver/web_sales             674931 = 674931 + 0 ; relu 674931 -> OK
+2026-11-18 12:59:08 INFO Q21 Volume     silver/store_returns         38328 = 38328 + 0 ; relu 38328 -> OK
+2026-11-18 12:59:08 INFO Q21 Volume     silver/web_returns           38887 = 38887 + 0 ; relu 38887 -> OK
+2026-11-18 12:59:08 INFO Q22 Volume     silver/store_sales           initial=667579, refresh=6632 -> OK
+2026-11-18 12:59:08 INFO Q22 Volume     silver/web_sales             initial=668052, refresh=6879 -> OK
+2026-11-18 12:59:09 INFO Q22 Volume     silver/item                  initial=17820, refresh=180 -> OK
+2026-11-18 12:59:09 INFO Q22 Volume     silver/store_returns         initial=37902, refresh=426 -> OK
+2026-11-18 12:59:09 INFO Q22 Volume     silver/web_returns           initial=38487, refresh=400 -> OK
+2026-11-18 12:59:09 INFO Q23 Intégrité  silver/store_sales           0 -> OK
+2026-11-18 12:59:09 INFO Q23 Intégrité  silver/store_sales           0 -> OK
+2026-11-18 12:59:09 INFO Q23 Intégrité  silver/store_sales           0 -> OK
+2026-11-18 12:59:09 INFO Q23 Intégrité  silver/web_sales             0 -> OK
+2026-11-18 12:59:09 INFO Q23 Intégrité  silver/web_sales             0 -> OK
+2026-11-18 12:59:10 INFO Q23 Intégrité  silver/store_returns         0 -> OK
+2026-11-18 12:59:10 INFO Q23 Intégrité  silver/store_returns         0 -> OK
+2026-11-18 12:59:10 INFO Q23 Intégrité  silver/web_returns           0 -> OK
+2026-11-18 12:59:10 INFO Q23 Intégrité  silver/web_returns           0 -> OK
+2026-11-18 12:59:10 INFO Q24 Intégrité  silver/store_returns         407 retour(s) sans vente (initial: 0/37902, refresh: 407/426) -> ANOMALIE
+2026-11-18 12:59:10 INFO Q24 Intégrité  silver/web_returns           371 retour(s) sans vente (initial: 0/38487, refresh: 371/400) -> ANOMALIE
+2026-11-18 12:59:10 INFO Q25 Réconciliation gold (magasin)               1290066342.21 / 1290066342.21 / 1290066342.21 / 1290066342.21 -> OK
+2026-11-18 12:59:11 INFO Q25 Réconciliation gold (web)                   1721826606.15 / 1721826606.15 / 1721826606.15 / 1721826606.15 -> OK
+2026-11-18 12:59:11 INFO Q25 Réconciliation gold/ventes_magasin_annee    1290066342.21 / 1290066342.21 -> OK
+2026-11-18 12:59:11 INFO Q26 Réconciliation gold vs Jour 1               45/45 identiques -> OK
+2026-11-18 12:59:11 INFO Q27 Fraîcheur  silver/store_sales           2001-01-01 -> 2005-12-31 ; ingestion 2026-11-18 ; traitement 2026-11-18 12:56:54 -> INFO
+2026-11-18 12:59:11 INFO Q27 Fraîcheur  silver/web_sales             2001-01-01 -> 2005-12-31 ; ingestion 2026-11-18 ; traitement 2026-11-18 12:56:54 -> INFO
+2026-11-18 12:59:11 INFO Q27 Fraîcheur  silver/store_returns         2001-01-25 -> 2007-11-14 ; ingestion 2026-11-18 ; traitement 2026-11-18 12:56:54 -> INFO
+2026-11-18 12:59:11 INFO Q27 Fraîcheur  silver/web_returns           2001-01-26 -> 2008-03-18 ; ingestion 2026-11-18 ; traitement 2026-11-18 12:56:54 -> INFO
+2026-11-18 12:59:13 INFO Qualité : {'OK': 70, 'ANOMALIE': 3, 'INFO': 12, 'total': 85, 'anomalies': ['Q20 silver/store_returns : 2 couple(s) (doc 52301 article 10002 : 45 rendus pour 32 vendus; doc 57158 article 10001 : 43 rendus pour 34 vendus)', 'Q24 silver/store_returns : 407 retour(s) sans vente (initial: 0/37902, refresh: 407/426)', 'Q24 silver/web_returns : 371 retour(s) sans vente (initial: 0/38487, refresh: 371/400)']}
+---- 05_qualite.py terminé en 27 s
+==================== 06_formats.py ====================
+WARNING: Using incubator modules: jdk.incubator.vector
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+26/11/18 12:59:15 WARN Utils: Your hostname, retail-lake-vm, resolves to a loopback address: 127.0.1.1; using 10.255.255.254 instead (on interface lo)
+26/11/18 12:59:15 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/18 12:59:16 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2026-11-18 12:59:18 INFO Session Spark 4.3.0 (master=local[*]), lac=hdfs://localhost:9000/retail-lake
+2026-11-18 12:59:26 INFO CSV (Bronze .dat) : {'format': 'CSV (Bronze .dat)', 'octets': 93686871, 'mo': 89.3, 'ratio_vs_csv': 1.0, 'fichiers': 2, 'lignes': 674211, 'temps_count_s': 0.26, 'temps_somme_1_colonne_s': 0.27, 'somme_ca_controle': '1290066342.21', 'type_ss_ext_sales_price': 'string', 'type_ss_quantity': 'string', 'type_date': 'absent (clé numérique ss_sold_date_sk seulement)', 'schema_porte_par_le_fichier': 'non : noms et types fournis par le programme'}
+2026-11-18 12:59:32 INFO JSON lignes : {'format': 'JSON lignes', 'octets': 356611938, 'mo': 340.1, 'ratio_vs_csv': 3.806, 'fichiers': 18, 'lignes': 674211, 'temps_count_s': 0.56, 'temps_somme_1_colonne_s': 0.58, 'somme_ca_controle': '1290066342.21', 'type_ss_ext_sales_price': 'double', 'type_ss_quantity': 'bigint', 'type_date': 'absent (clé numérique ss_sold_date_sk seulement)', 'schema_porte_par_le_fichier': 'noms oui, types déduits'}
+2026-11-18 12:59:33 INFO Parquet (Snappy) : {'format': 'Parquet (Snappy)', 'octets': 82247889, 'mo': 78.4, 'ratio_vs_csv': 0.878, 'fichiers': 21, 'lignes': 674211, 'temps_count_s': 0.11, 'temps_somme_1_colonne_s': 0.12, 'somme_ca_controle': '1290066342.21', 'type_ss_ext_sales_price': 'decimal(7,2)', 'type_ss_quantity': 'int', 'type_date': 'date', 'schema_porte_par_le_fichier': 'oui'}
+2026-11-18 12:59:33 INFO Comparaison des formats terminée
+---- 06_formats.py terminé en 20 s
+==================== 07_preuves_hdfs.sh ====================
+Preuves HDFS écrites dans ./../UC06_preuves/hdfs
+---- 07_preuves_hdfs.sh terminé en 12 s

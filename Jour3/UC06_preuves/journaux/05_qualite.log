@@ -1,0 +1,87 @@
+2026-11-18 13:02:42 INFO Session Spark 4.3.0 (master=local[*]), lac=hdfs://localhost:9000/retail-lake
+2026-11-18 13:02:46 INFO Q01 Complétude silver/store_sales           0 ligne(s) -> OK
+2026-11-18 13:02:46 INFO Q02 Complétude silver/store_sales           159 (0.024 %) -> INFO
+2026-11-18 13:02:47 INFO Q01 Complétude silver/web_sales             0 ligne(s) -> OK
+2026-11-18 13:02:47 INFO Q02 Complétude silver/web_sales             123 (0.018 %) -> INFO
+2026-11-18 13:02:47 INFO Q03 Complétude silver/item                  0 -> OK
+2026-11-18 13:02:47 INFO Q03 Complétude silver/item                  0 -> OK
+2026-11-18 13:02:48 INFO Q03 Complétude silver/item                  0 -> OK
+2026-11-18 13:02:48 INFO Q03 Complétude silver/store                 0 -> OK
+2026-11-18 13:02:48 INFO Q03 Complétude silver/store                 0 -> OK
+2026-11-18 13:02:48 INFO Q03 Complétude silver/reason                0 -> OK
+2026-11-18 13:02:48 INFO Q04 Complétude silver/store_returns         11 -> INFO
+2026-11-18 13:02:48 INFO Q04 Complétude silver/web_returns           7 -> INFO
+2026-11-18 13:02:50 INFO Q05 Unicité    silver/store_sales           674211 lignes, 674211 clés distinctes -> OK
+2026-11-18 13:02:50 INFO Q05 Unicité    silver/web_sales             674931 lignes, 674931 clés distinctes -> OK
+2026-11-18 13:02:51 INFO Q05 Unicité    silver/store_returns         38328 lignes, 38328 clés distinctes -> OK
+2026-11-18 13:02:51 INFO Q05 Unicité    silver/web_returns           38887 lignes, 38887 clés distinctes -> OK
+2026-11-18 13:02:51 INFO Q06 Unicité    silver/item                  18000 / 18000 -> OK
+2026-11-18 13:02:52 INFO Q06 Unicité    silver/store                 12 / 12 -> OK
+2026-11-18 13:02:52 INFO Q06 Unicité    silver/date_dim              109573 / 109573 -> OK
+2026-11-18 13:02:52 INFO Q06 Unicité    silver/reason                35 / 35 -> OK
+2026-11-18 13:02:52 INFO Q06 Unicité    silver/item                  18000 / 18000 -> OK
+2026-11-18 13:02:53 INFO Q07 Unicité    silver/store_sales           4182 lignes en trop -> INFO
+2026-11-18 13:02:54 INFO Q07 Unicité    silver/web_sales             4115 lignes en trop -> INFO
+2026-11-18 13:02:54 INFO Q08 Validité   silver/store_sales           0 colonne(s) en écart [] -> OK
+2026-11-18 13:02:54 INFO Q08 Validité   silver/web_sales             0 colonne(s) en écart [] -> OK
+2026-11-18 13:02:54 INFO Q08 Validité   silver/store_returns         0 colonne(s) en écart [] -> OK
+2026-11-18 13:02:54 INFO Q08 Validité   silver/web_returns           0 colonne(s) en écart [] -> OK
+2026-11-18 13:02:54 INFO Q08 Validité   silver/item                  0 colonne(s) en écart [] -> OK
+2026-11-18 13:02:54 INFO Q08 Validité   silver/store                 0 colonne(s) en écart [] -> OK
+2026-11-18 13:02:54 INFO Q08 Validité   silver/date_dim              0 colonne(s) en écart [] -> OK
+2026-11-18 13:02:54 INFO Q08 Validité   silver/reason                0 colonne(s) en écart [] -> OK
+2026-11-18 13:02:54 INFO Q09 Validité   silver/store_sales           0 -> OK
+2026-11-18 13:02:54 INFO Q10 Validité   silver/store_sales           0 -> OK
+2026-11-18 13:02:54 INFO Q11 Validité   silver/store_sales           2001-01-01 -> 2005-12-31 -> OK
+2026-11-18 13:02:54 INFO Q09 Validité   silver/web_sales             0 -> OK
+2026-11-18 13:02:55 INFO Q10 Validité   silver/web_sales             0 -> OK
+2026-11-18 13:02:55 INFO Q11 Validité   silver/web_sales             2001-01-01 -> 2005-12-31 -> OK
+2026-11-18 13:02:55 INFO Q12 Validité   silver/date_dim              0 -> OK
+2026-11-18 13:02:55 INFO Q13 Cohérence  silver/store_sales           0 -> OK
+2026-11-18 13:02:56 INFO Q14 Cohérence  silver/store_sales           0 -> OK
+2026-11-18 13:02:56 INFO Q15 Cohérence  silver/store_sales           0 -> OK
+2026-11-18 13:02:56 INFO Q16 Cohérence  silver/store_sales           500889 (74.3 %) -> INFO
+2026-11-18 13:02:57 INFO Q17 Cohérence  silver/store_sales           0 document(s) incohérent(s) -> OK
+2026-11-18 13:02:58 INFO Q13 Cohérence  silver/web_sales             0 -> OK
+2026-11-18 13:02:58 INFO Q14 Cohérence  silver/web_sales             0 -> OK
+2026-11-18 13:02:58 INFO Q15 Cohérence  silver/web_sales             0 -> OK
+2026-11-18 13:02:58 INFO Q16 Cohérence  silver/web_sales             411338 (60.9 %) -> INFO
+2026-11-18 13:02:58 INFO Q17 Cohérence  silver/web_sales             0 document(s) incohérent(s) -> OK
+2026-11-18 13:02:59 INFO Q18 Cohérence  silver/web_sales             1 à 120 jours, 0 négatif(s) -> OK
+2026-11-18 13:02:59 INFO Q19 Cohérence  silver/store_returns         0 -> OK
+2026-11-18 13:02:59 INFO Q19 Cohérence  silver/web_returns           0 -> OK
+2026-11-18 13:03:01 INFO Q20 Cohérence  silver/store_returns         2 couple(s) (doc 52301 article 10002 : 45 rendus pour 32 vendus; doc 57158 article 10001 : 43 rendus pour 34 vendus) -> ANOMALIE
+2026-11-18 13:03:02 INFO Q20 Cohérence  silver/web_returns           0 couple(s)  -> OK
+2026-11-18 13:03:02 INFO Q21 Volume     silver/date_dim              109573 = 109573 + 0 ; relu 109573 -> OK
+2026-11-18 13:03:02 INFO Q21 Volume     silver/item                  18000 = 18000 + 0 ; relu 18000 -> OK
+2026-11-18 13:03:02 INFO Q21 Volume     silver/store                 12 = 12 + 0 ; relu 12 -> OK
+2026-11-18 13:03:02 INFO Q21 Volume     silver/reason                35 = 35 + 0 ; relu 35 -> OK
+2026-11-18 13:03:02 INFO Q21 Volume     silver/store_sales           674211 = 674211 + 0 ; relu 674211 -> OK
+2026-11-18 13:03:02 INFO Q21 Volume     silver/web_sales             674931 = 674931 + 0 ; relu 674931 -> OK
+2026-11-18 13:03:02 INFO Q21 Volume     silver/store_returns         38328 = 38328 + 0 ; relu 38328 -> OK
+2026-11-18 13:03:02 INFO Q21 Volume     silver/web_returns           38887 = 38887 + 0 ; relu 38887 -> OK
+2026-11-18 13:03:03 INFO Q22 Volume     silver/store_sales           initial=667579, refresh=6632 -> OK
+2026-11-18 13:03:03 INFO Q22 Volume     silver/web_sales             initial=668052, refresh=6879 -> OK
+2026-11-18 13:03:03 INFO Q22 Volume     silver/item                  initial=17820, refresh=180 -> OK
+2026-11-18 13:03:03 INFO Q22 Volume     silver/store_returns         initial=37902, refresh=426 -> OK
+2026-11-18 13:03:03 INFO Q22 Volume     silver/web_returns           initial=38487, refresh=400 -> OK
+2026-11-18 13:03:03 INFO Q23 Intégrité  silver/store_sales           0 -> OK
+2026-11-18 13:03:04 INFO Q23 Intégrité  silver/store_sales           0 -> OK
+2026-11-18 13:03:04 INFO Q23 Intégrité  silver/store_sales           0 -> OK
+2026-11-18 13:03:04 INFO Q23 Intégrité  silver/web_sales             0 -> OK
+2026-11-18 13:03:04 INFO Q23 Intégrité  silver/web_sales             0 -> OK
+2026-11-18 13:03:04 INFO Q23 Intégrité  silver/store_returns         0 -> OK
+2026-11-18 13:03:04 INFO Q23 Intégrité  silver/store_returns         0 -> OK
+2026-11-18 13:03:05 INFO Q23 Intégrité  silver/web_returns           0 -> OK
+2026-11-18 13:03:05 INFO Q23 Intégrité  silver/web_returns           0 -> OK
+2026-11-18 13:03:05 INFO Q24 Intégrité  silver/store_returns         407 retour(s) sans vente (initial: 0/37902, refresh: 407/426) -> ANOMALIE
+2026-11-18 13:03:05 INFO Q24 Intégrité  silver/web_returns           371 retour(s) sans vente (initial: 0/38487, refresh: 371/400) -> ANOMALIE
+2026-11-18 13:03:05 INFO Q25 Réconciliation gold (magasin)               1290066342.21 / 1290066342.21 / 1290066342.21 / 1290066342.21 -> OK
+2026-11-18 13:03:06 INFO Q25 Réconciliation gold (web)                   1721826606.15 / 1721826606.15 / 1721826606.15 / 1721826606.15 -> OK
+2026-11-18 13:03:06 INFO Q25 Réconciliation gold/ventes_magasin_annee    1290066342.21 / 1290066342.21 -> OK
+2026-11-18 13:03:06 INFO Q26 Réconciliation gold vs Jour 1               45/45 identiques -> OK
+2026-11-18 13:03:06 INFO Q27 Fraîcheur  silver/store_sales           2001-01-01 -> 2005-12-31 ; ingestion 2026-11-18 ; traitement 2026-11-18 12:56:54 -> INFO
+2026-11-18 13:03:07 INFO Q27 Fraîcheur  silver/web_sales             2001-01-01 -> 2005-12-31 ; ingestion 2026-11-18 ; traitement 2026-11-18 12:56:54 -> INFO
+2026-11-18 13:03:07 INFO Q27 Fraîcheur  silver/store_returns         2001-01-25 -> 2007-11-14 ; ingestion 2026-11-18 ; traitement 2026-11-18 12:56:54 -> INFO
+2026-11-18 13:03:07 INFO Q27 Fraîcheur  silver/web_returns           2001-01-26 -> 2008-03-18 ; ingestion 2026-11-18 ; traitement 2026-11-18 12:56:54 -> INFO
+2026-11-18 13:03:08 INFO Qualité : {'OK': 70, 'ANOMALIE': 3, 'INFO': 12, 'total': 85, 'anomalies': ['Q20 silver/store_returns : 2 couple(s) (doc 52301 article 10002 : 45 rendus pour 32 vendus; doc 57158 article 10001 : 43 rendus pour 34 vendus)', 'Q24 silver/store_returns : 407 retour(s) sans vente (initial: 0/37902, refresh: 407/426)', 'Q24 silver/web_returns : 371 retour(s) sans vente (initial: 0/38487, refresh: 371/400)']}

@@ -1,0 +1,11 @@
+{
+  "OK": 70,
+  "ANOMALIE": 3,
+  "INFO": 12,
+  "total": 85,
+  "anomalies": [
+    "Q20 silver/store_returns : 2 couple(s) (doc 52301 article 10002 : 45 rendus pour 32 vendus; doc 57158 article 10001 : 43 rendus pour 34 vendus)",
+    "Q24 silver/store_returns : 407 retour(s) sans vente (initial: 0/37902, refresh: 407/426)",
+    "Q24 silver/web_returns : 371 retour(s) sans vente (initial: 0/38487, refresh: 371/400)"
+  ]
+}

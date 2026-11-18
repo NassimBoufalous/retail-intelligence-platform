@@ -1,0 +1,24 @@
+# AVANT correction (2026-11-18 12:53:06) : fichiers écrits par Spark sans HADOOP_CONF_DIR
+Found 4 items
+-rw-r--r--   3 etudiant supergroup    3870410 2026-11-18 12:44 /retail-lake/silver/store_sales/annee=2004/part-00009-52a1e077-6854-402d-9d61-43f9e80a0ec3.c000.snappy.parquet
+-rw-r--r--   3 etudiant supergroup    5313015 2026-11-18 12:44 /retail-lake/silver/store_sales/annee=2004/part-00010-52a1e077-6854-402d-9d61-43f9e80a0ec3.c000.snappy.parquet
+Status: HEALTHY
+ Total blocks (validated):	197 (avg. block size 8258702 B)
+ Under-replicated blocks:	155 (78.68021 %)
+ Default replication factor:	1
+
+# Correction : hdfs dfs -setrep -R 1 sur les zones écrites au Jour 3 (contenu inchangé)
+setrep 1 : /retail-lake/bronze
+setrep 1 : /retail-lake/silver
+setrep 1 : /retail-lake/gold
+setrep 1 : /retail-lake/quality
+setrep 1 : /retail-lake/logs/transformation
+
+# APRÈS correction
+Found 4 items
+-rw-r--r--   1 etudiant supergroup    3870410 2026-11-18 12:44 /retail-lake/silver/store_sales/annee=2004/part-00009-52a1e077-6854-402d-9d61-43f9e80a0ec3.c000.snappy.parquet
+-rw-r--r--   1 etudiant supergroup    5313015 2026-11-18 12:44 /retail-lake/silver/store_sales/annee=2004/part-00010-52a1e077-6854-402d-9d61-43f9e80a0ec3.c000.snappy.parquet
+Status: HEALTHY
+ Total blocks (validated):	197 (avg. block size 8258702 B)
+ Under-replicated blocks:	0 (0.0 %)
+ Default replication factor:	1

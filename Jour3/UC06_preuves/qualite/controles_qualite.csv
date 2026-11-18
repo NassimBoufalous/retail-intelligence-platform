@@ -1,0 +1,86 @@
+﻿id;dimension;jeu;regle;methode;resultat;seuil;statut;traitement
+Q01;Complétude;silver/store_sales;Champs obligatoires non nuls (ss_sold_date_sk, ss_item_sk, ss_ticket_number, ss_quantity, ss_ext_sales_price);comptage des lignes avec au moins un null;0 ligne(s);0;OK;quarantaine (R5)
+Q02;Complétude;silver/store_sales;Colonne facultative promo_sk;taux de null;159 (0.024 %);–;INFO;conservé : vente sans promotion (R10)
+Q01;Complétude;silver/web_sales;Champs obligatoires non nuls (ws_sold_date_sk, ws_item_sk, ws_order_number, ws_quantity, ws_ext_sales_price);comptage des lignes avec au moins un null;0 ligne(s);0;OK;quarantaine (R5)
+Q02;Complétude;silver/web_sales;Colonne facultative promo_sk;taux de null;123 (0.018 %);–;INFO;conservé : vente sans promotion (R10)
+Q03;Complétude;silver/item;i_category renseigné;comptage des null;0;0;OK;libellé « Non renseignée » en Gold si null
+Q03;Complétude;silver/item;i_item_id renseigné;comptage des null;0;0;OK;
+Q03;Complétude;silver/item;i_current_price renseigné;comptage des null;0;0;OK;
+Q03;Complétude;silver/store;s_store_name renseigné;comptage des null;0;0;OK;
+Q03;Complétude;silver/store;s_store_id renseigné;comptage des null;0;0;OK;
+Q03;Complétude;silver/reason;r_reason_desc renseigné;comptage des null;0;0;OK;
+Q04;Complétude;silver/store_returns;Motif de retour renseigné;comptage des null;11;–;INFO;"conservé ; « Motif non renseigné » dans gold/retours_motif"
+Q04;Complétude;silver/web_returns;Motif de retour renseigné;comptage des null;7;–;INFO;"conservé ; « Motif non renseigné » dans gold/retours_motif"
+Q05;Unicité;silver/store_sales;Clé technique ligne_id unique (tous lots confondus);count vs count distinct;674211 lignes, 674211 clés distinctes;0;OK;aucun doublon exact, y compris entre les lots initial et refresh
+Q05;Unicité;silver/web_sales;Clé technique ligne_id unique (tous lots confondus);count vs count distinct;674931 lignes, 674931 clés distinctes;0;OK;aucun doublon exact, y compris entre les lots initial et refresh
+Q05;Unicité;silver/store_returns;Clé technique ligne_id unique (tous lots confondus);count vs count distinct;38328 lignes, 38328 clés distinctes;0;OK;aucun doublon exact, y compris entre les lots initial et refresh
+Q05;Unicité;silver/web_returns;Clé technique ligne_id unique (tous lots confondus);count vs count distinct;38887 lignes, 38887 clés distinctes;0;OK;aucun doublon exact, y compris entre les lots initial et refresh
+Q06;Unicité;silver/item;i_item_sk unique;count vs count distinct;18000 / 18000;0;OK;quarantaine si doublon (R12)
+Q06;Unicité;silver/store;s_store_sk unique;count vs count distinct;12 / 12;0;OK;quarantaine si doublon (R12)
+Q06;Unicité;silver/date_dim;d_date_sk unique;count vs count distinct;109573 / 109573;0;OK;quarantaine si doublon (R12)
+Q06;Unicité;silver/reason;r_reason_sk unique;count vs count distinct;35 / 35;0;OK;quarantaine si doublon (R12)
+Q06;Unicité;silver/item;i_item_id unique;count vs count distinct;18000 / 18000;0;OK;quarantaine si doublon (R12)
+Q07;Unicité;silver/store_sales;Grain : (ticket_number, item) unique ?;count vs count distinct;4182 lignes en trop;–;INFO;attendu (même article sur 2 lignes d'un ticket) : clé technique ligne_id créée (R4)
+Q07;Unicité;silver/web_sales;Grain : (order_number, item) unique ?;count vs count distinct;4115 lignes en trop;–;INFO;attendu (même article sur 2 lignes d'un ticket) : clé technique ligne_id créée (R4)
+Q08;Validité;silver/store_sales;Types conformes au schéma cible (spécification TPCx-BB);comparaison schéma Parquet relu / types cibles;0 colonne(s) en écart [];0;OK;typage explicite (R1)
+Q08;Validité;silver/web_sales;Types conformes au schéma cible (spécification TPCx-BB);comparaison schéma Parquet relu / types cibles;0 colonne(s) en écart [];0;OK;typage explicite (R1)
+Q08;Validité;silver/store_returns;Types conformes au schéma cible (spécification TPCx-BB);comparaison schéma Parquet relu / types cibles;0 colonne(s) en écart [];0;OK;typage explicite (R1)
+Q08;Validité;silver/web_returns;Types conformes au schéma cible (spécification TPCx-BB);comparaison schéma Parquet relu / types cibles;0 colonne(s) en écart [];0;OK;typage explicite (R1)
+Q08;Validité;silver/item;Types conformes au schéma cible (spécification TPCx-BB);comparaison schéma Parquet relu / types cibles;0 colonne(s) en écart [];0;OK;typage explicite (R1)
+Q08;Validité;silver/store;Types conformes au schéma cible (spécification TPCx-BB);comparaison schéma Parquet relu / types cibles;0 colonne(s) en écart [];0;OK;typage explicite (R1)
+Q08;Validité;silver/date_dim;Types conformes au schéma cible (spécification TPCx-BB);comparaison schéma Parquet relu / types cibles;0 colonne(s) en écart [];0;OK;typage explicite (R1)
+Q08;Validité;silver/reason;Types conformes au schéma cible (spécification TPCx-BB);comparaison schéma Parquet relu / types cibles;0 colonne(s) en écart [];0;OK;typage explicite (R1)
+Q09;Validité;silver/store_sales;Quantité > 0 et prix >= 0;comptage;0;0;OK;quarantaine (R6)
+Q10;Validité;silver/store_sales;Prix de vente <= prix catalogue;comptage;0;0;OK;
+Q11;Validité;silver/store_sales;Dates de vente dans la période du kit (2001-2005);min / max;2001-01-01 -> 2005-12-31;0;OK;
+Q09;Validité;silver/web_sales;Quantité > 0 et prix >= 0;comptage;0;0;OK;quarantaine (R6)
+Q10;Validité;silver/web_sales;Prix de vente <= prix catalogue;comptage;0;0;OK;
+Q11;Validité;silver/web_sales;Dates de vente dans la période du kit (2001-2005);min / max;2001-01-01 -> 2005-12-31;0;OK;
+Q12;Validité;silver/date_dim;Dates et mois valides;comptage;0;0;OK;
+Q13;Cohérence;silver/store_sales;ext_sales_price = sales_price x quantity;écart > 0,01;0;0;OK;quarantaine (R7)
+Q14;Cohérence;silver/store_sales;net_paid = ext_sales_price - coupon_amt;écart > 0,01;0;0;OK;
+Q15;Cohérence;silver/store_sales;net_profit = net_paid - ext_wholesale_cost;écart > 0,01;0;0;OK;
+Q16;Cohérence;silver/store_sales;Lignes à marge négative;comptage;500889 (74.3 %);–;INFO;conservées : effet des paramètres du générateur (remise jusqu'à 100 %), marge non interprétable
+Q17;Cohérence;silver/store_sales;Un ticket_number = une seule date et un seul client;groupBy document;0 document(s) incohérent(s);0;OK;
+Q13;Cohérence;silver/web_sales;ext_sales_price = sales_price x quantity;écart > 0,01;0;0;OK;quarantaine (R7)
+Q14;Cohérence;silver/web_sales;net_paid = ext_sales_price - coupon_amt;écart > 0,01;0;0;OK;
+Q15;Cohérence;silver/web_sales;net_profit = net_paid - ext_wholesale_cost;écart > 0,01;0;0;OK;
+Q16;Cohérence;silver/web_sales;Lignes à marge négative;comptage;411338 (60.9 %);–;INFO;conservées : effet des paramètres du générateur (remise jusqu'à 100 %), marge non interprétable
+Q17;Cohérence;silver/web_sales;Un order_number = une seule date et un seul client;groupBy document;0 document(s) incohérent(s);0;OK;
+Q18;Cohérence;silver/web_sales;Expédition après la vente (spécification : 1 à 120 jours);min / max de ship_date - sold_date;1 à 120 jours, 0 négatif(s);0;OK;
+Q19;Cohérence;silver/store_returns;Retour daté après la vente d'origine;comptage;0;0;OK;
+Q19;Cohérence;silver/web_returns;Retour daté après la vente d'origine;comptage;0;0;OK;
+Q20;Cohérence;silver/store_returns;Quantité retournée cumulée <= quantité vendue (document, article);jointure retours / ventes agrégés;"2 couple(s) (doc 52301 article 10002 : 45 rendus pour 32 vendus; doc 57158 article 10001 : 43 rendus pour 34 vendus)";0;ANOMALIE;conservés et signalés (retour_excedentaire = true sur 4 lignes, R11b)
+Q20;Cohérence;silver/web_returns;Quantité retournée cumulée <= quantité vendue (document, article);jointure retours / ventes agrégés;0 couple(s) ;0;OK;
+Q21;Volume;silver/date_dim;"Bronze = Silver + quarantaine ; relecture = écriture";comptages (bilan_silver.csv);"109573 = 109573 + 0 ; relu 109573";0;OK;
+Q21;Volume;silver/item;"Bronze = Silver + quarantaine ; relecture = écriture";comptages (bilan_silver.csv);"18000 = 18000 + 0 ; relu 18000";0;OK;
+Q21;Volume;silver/store;"Bronze = Silver + quarantaine ; relecture = écriture";comptages (bilan_silver.csv);"12 = 12 + 0 ; relu 12";0;OK;
+Q21;Volume;silver/reason;"Bronze = Silver + quarantaine ; relecture = écriture";comptages (bilan_silver.csv);"35 = 35 + 0 ; relu 35";0;OK;
+Q21;Volume;silver/store_sales;"Bronze = Silver + quarantaine ; relecture = écriture";comptages (bilan_silver.csv);"674211 = 674211 + 0 ; relu 674211";0;OK;
+Q21;Volume;silver/web_sales;"Bronze = Silver + quarantaine ; relecture = écriture";comptages (bilan_silver.csv);"674931 = 674931 + 0 ; relu 674931";0;OK;
+Q21;Volume;silver/store_returns;"Bronze = Silver + quarantaine ; relecture = écriture";comptages (bilan_silver.csv);"38328 = 38328 + 0 ; relu 38328";0;OK;
+Q21;Volume;silver/web_returns;"Bronze = Silver + quarantaine ; relecture = écriture";comptages (bilan_silver.csv);"38887 = 38887 + 0 ; relu 38887";0;OK;
+Q22;Volume;silver/store_sales;Les deux lots sont intégrés;comptage par lot_source;initial=667579, refresh=6632;0;OK;
+Q22;Volume;silver/web_sales;Les deux lots sont intégrés;comptage par lot_source;initial=668052, refresh=6879;0;OK;
+Q22;Volume;silver/item;Les deux lots sont intégrés;comptage par lot_source;initial=17820, refresh=180;0;OK;
+Q22;Volume;silver/store_returns;Les deux lots sont intégrés;comptage par lot_source;initial=37902, refresh=426;0;OK;
+Q22;Volume;silver/web_returns;Les deux lots sont intégrés;comptage par lot_source;initial=38487, refresh=400;0;OK;
+Q23;Intégrité;silver/store_sales;ss_item_sk -> item : aucune clé orpheline;left_anti join;0;0;OK;
+Q23;Intégrité;silver/store_sales;ss_store_sk -> store : aucune clé orpheline;left_anti join;0;0;OK;
+Q23;Intégrité;silver/store_sales;ss_sold_date_sk -> date_dim : aucune clé orpheline;left_anti join;0;0;OK;
+Q23;Intégrité;silver/web_sales;ws_item_sk -> item : aucune clé orpheline;left_anti join;0;0;OK;
+Q23;Intégrité;silver/web_sales;ws_sold_date_sk -> date_dim : aucune clé orpheline;left_anti join;0;0;OK;
+Q23;Intégrité;silver/store_returns;sr_item_sk -> item : aucune clé orpheline;left_anti join;0;0;OK;
+Q23;Intégrité;silver/store_returns;sr_reason_sk -> reason : aucune clé orpheline;left_anti join;0;0;OK;
+Q23;Intégrité;silver/web_returns;wr_item_sk -> item : aucune clé orpheline;left_anti join;0;0;OK;
+Q23;Intégrité;silver/web_returns;wr_reason_sk -> reason : aucune clé orpheline;left_anti join;0;0;OK;
+Q24;Intégrité;silver/store_returns;Chaque retour est rattaché à une vente (canal, document, article);jointure retours -> ventes (R11);407 retour(s) sans vente (initial: 0/37902, refresh: 407/426);0;ANOMALIE;conservés et signalés (vente_trouvee = false), exclus du taux de retour
+Q24;Intégrité;silver/web_returns;Chaque retour est rattaché à une vente (canal, document, article);jointure retours -> ventes (R11);371 retour(s) sans vente (initial: 0/38487, refresh: 371/400);0;ANOMALIE;conservés et signalés (vente_trouvee = false), exclus du taux de retour
+Q25;Réconciliation;gold (magasin);CA identique : Silver = fait_ventes = agrégats mensuels = agrégats catégorie;sommes de montant;1290066342.21 / 1290066342.21 / 1290066342.21 / 1290066342.21;0;OK;
+Q25;Réconciliation;gold (web);CA identique : Silver = fait_ventes = agrégats mensuels = agrégats catégorie;sommes de montant;1721826606.15 / 1721826606.15 / 1721826606.15 / 1721826606.15;0;OK;
+Q25;Réconciliation;gold/ventes_magasin_annee;CA par magasin = CA magasin Silver;sommes;1290066342.21 / 1290066342.21;0;OK;
+Q26;Réconciliation;gold vs Jour 1;KPI Gold (Spark) = KPI du Jour 1 (DuckDB), même fichiers;45 valeurs comparées (K01-K12, 2001-2005), tolérance = arrondi du J1;45/45 identiques;0;OK;
+Q27;Fraîcheur;silver/store_sales;Période couverte et date du dernier chargement;min / max;"2001-01-01 -> 2005-12-31 ; ingestion 2026-11-18 ; traitement 2026-11-18 12:56:54";–;INFO;
+Q27;Fraîcheur;silver/web_sales;Période couverte et date du dernier chargement;min / max;"2001-01-01 -> 2005-12-31 ; ingestion 2026-11-18 ; traitement 2026-11-18 12:56:54";–;INFO;
+Q27;Fraîcheur;silver/store_returns;Période couverte et date du dernier chargement;min / max;"2001-01-25 -> 2007-11-14 ; ingestion 2026-11-18 ; traitement 2026-11-18 12:56:54";–;INFO;
+Q27;Fraîcheur;silver/web_returns;Période couverte et date du dernier chargement;min / max;"2001-01-26 -> 2008-03-18 ; ingestion 2026-11-18 ; traitement 2026-11-18 12:56:54";–;INFO;

@@ -1,0 +1,18 @@
+2026-11-18 12:53:51 INFO Session Spark 4.3.0 (master=local[*]), lac=hdfs://localhost:9000/retail-lake
+2026-11-18 12:53:55 INFO initial/store_sales : déjà présent (identique), 667579 lignes, champs 23-23/23, OK
+2026-11-18 12:53:56 INFO initial/web_sales : déjà présent (identique), 668052 lignes, champs 34-34/34, OK
+2026-11-18 12:53:56 INFO initial/store_returns : déjà présent (identique), 37902 lignes, champs 20-20/20, OK
+2026-11-18 12:53:56 INFO initial/web_returns : déjà présent (identique), 38487 lignes, champs 24-24/24, OK
+2026-11-18 12:53:57 INFO initial/item : déjà présent (identique), 17820 lignes, champs 22-22/22, OK
+2026-11-18 12:53:57 INFO initial/store : déjà présent (identique), 12 lignes, champs 29-29/29, OK
+2026-11-18 12:53:57 INFO initial/date_dim : déjà présent (identique), 109573 lignes, champs 28-28/28, OK
+2026-11-18 12:53:57 INFO initial/reason : déjà présent (identique), 35 lignes, champs 3-3/3, OK
+2026-11-18 12:53:58 INFO refresh/store_sales : déjà présent (identique), 6632 lignes, champs 23-23/23, OK
+2026-11-18 12:53:58 INFO refresh/web_sales : déjà présent (identique), 6879 lignes, champs 34-34/34, OK
+2026-11-18 12:53:58 INFO refresh/store_returns : déjà présent (identique), 426 lignes, champs 20-20/20, OK
+2026-11-18 12:53:58 INFO refresh/web_returns : déjà présent (identique), 400 lignes, champs 24-24/24, OK
+2026-11-18 12:53:58 INFO refresh/item : déjà présent (identique), 180 lignes, champs 22-22/22, OK
+2026-11-18 12:53:58 INFO refresh/store : absent du lot (normal, le refresh ne contient que 11 tables)
+2026-11-18 12:53:58 INFO refresh/date_dim : absent du lot (normal, le refresh ne contient que 11 tables)
+2026-11-18 12:53:58 INFO refresh/reason : absent du lot (normal, le refresh ne contient que 11 tables)
+2026-11-18 12:54:00 INFO Bronze : 13 fichiers, 0 anomalie(s)

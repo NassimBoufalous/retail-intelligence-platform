@@ -1,0 +1,17 @@
+2026-11-18 12:54:09 INFO Session Spark 4.3.0 (master=local[*]), lac=hdfs://localhost:9000/retail-lake
+2026-11-18 12:54:21 INFO store_sales : conversions de type en échec = aucune
+2026-11-18 12:55:10 INFO store_sales : 674211 lignes, 23 col., clés candidates=[], doublons exacts=0, grain ss_ticket_number+ss_item_sk=NON unique
+2026-11-18 12:55:14 INFO web_sales : conversions de type en échec = aucune
+2026-11-18 12:56:11 INFO web_sales : 674931 lignes, 34 col., clés candidates=[], doublons exacts=0, grain ws_order_number+ws_item_sk=NON unique
+2026-11-18 12:56:12 INFO store_returns : conversions de type en échec = aucune
+2026-11-18 12:56:17 INFO store_returns : 38328 lignes, 20 col., clés candidates=[], doublons exacts=0, grain sr_ticket_number+sr_item_sk=NON unique
+2026-11-18 12:56:18 INFO web_returns : conversions de type en échec = aucune
+2026-11-18 12:56:26 INFO web_returns : 38887 lignes, 24 col., clés candidates=[], doublons exacts=0, grain wr_order_number+wr_item_sk=NON unique
+2026-11-18 12:56:27 INFO item : conversions de type en échec = aucune
+2026-11-18 12:56:32 INFO item : 18000 lignes, 22 col., clés candidates=['i_item_sk', 'i_item_id', 'i_product_name'], doublons exacts=0, grain i_item_sk=unique
+2026-11-18 12:56:32 INFO store : conversions de type en échec = aucune
+2026-11-18 12:56:34 INFO store : 12 lignes, 29 col., clés candidates=['s_store_sk', 's_store_id', 's_closed_date_sk', 's_store_name', 's_floor_space', 's_manager', 's_market_desc', 's_market_manager', 's_street_number', 's_street_name', 's_street_type', 's_suite_number', 's_city', 's_county', 's_zip'], doublons exacts=0, grain s_store_sk=unique
+2026-11-18 12:56:35 INFO date_dim : conversions de type en échec = aucune
+2026-11-18 12:56:48 INFO date_dim : 109573 lignes, 28 col., clés candidates=['d_date_sk', 'd_date_id', 'd_date'], doublons exacts=0, grain d_date_sk=unique
+2026-11-18 12:56:48 INFO reason : conversions de type en échec = aucune
+2026-11-18 12:56:49 INFO reason : 35 lignes, 3 col., clés candidates=['r_reason_sk', 'r_reason_id', 'r_reason_desc'], doublons exacts=0, grain r_reason_sk=unique

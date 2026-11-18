@@ -1,0 +1,5 @@
+== Parquet : somme d'une colonne, année 2004 ==
++- FileScan parquet [ss_ext_sales_price#1533,annee#1550] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex(1 paths)[hdfs://localhost:9000/retail-lake/silver/store_sales], PartitionFilters: [isnotnull(annee#1550), (annee#1550 = 2004)], PushedFilters: [], ReadSchema: struct<ss_ext_sales_price:decimal(7,2)>
+
+== CSV : somme d'une colonne ==
++- FileScan csv [ss_ext_sales_price#1602] Batched: false, DataFilters: [], Format: CSV, Location: InMemoryFileIndex(2 paths)[hdfs://localhost:9000/retail-lake/bronze/tpcxbb/initial/store_sales/in..., PartitionFilters: [], PushedFilters: [], ReadSchema: struct<ss_ext_sales_price:string>

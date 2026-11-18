@@ -41,3 +41,6 @@ Jour*/**/README_Jour*.md
 # Jour 2 : seuls les livrables demandés sont publiés (scripts et sommaire conservés en local)
 Jour2/scripts/
 Jour2/README.md
+
+# Jour 3 : outils locaux de mise en page des PDF et de schémas (non demandés par le TP)
+Jour3/outils/

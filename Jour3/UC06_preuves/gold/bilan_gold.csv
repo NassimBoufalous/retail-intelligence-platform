@@ -1,0 +1,7 @@
+﻿jeu;lignes;colonnes;finalite;fichiers_parquet;octets;partitionnement;chemin
+fait_ventes;1349142;22;Base détaillée des analyses (J4);40;132457541;annee;hdfs://localhost:9000/retail-lake/gold/fait_ventes
+ventes_mensuelles_canal;120;12;Q1 évolution du CA, Q2 répartition par canal, Q7 panier moyen;1;8431;aucun;hdfs://localhost:9000/retail-lake/gold/ventes_mensuelles_canal
+ventes_categorie_annee;90;9;Q3 catégories qui génèrent le plus de CA et de quantités;1;4860;aucun;hdfs://localhost:9000/retail-lake/gold/ventes_categorie_annee
+ventes_magasin_annee;60;14;Q6 CA et tickets par magasin, magasins en retrait;1;7061;aucun;hdfs://localhost:9000/retail-lake/gold/ventes_magasin_annee
+retours_categorie;90;12;Q8 taux de retour par catégorie (quantité et montant);1;7368;aucun;hdfs://localhost:9000/retail-lake/gold/retours_categorie
+retours_motif;72;8;Q8 principaux motifs de retour;1;5832;aucun;hdfs://localhost:9000/retail-lake/gold/retours_motif

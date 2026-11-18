@@ -1,0 +1,24 @@
+[OK ] R1 conversion valide 
+[OK ] R1 texte dans un entier détecté (échecs={'ss_quantity': 1, 'ss_net_profit': 1})
+[OK ] R2 chaîne vide -> null, ligne conservée 
+[OK ] R1 dépassement DECIMAL(7,2) détecté 
+[OK ] R1 types cibles appliqués 
+[OK ] ventes : non_convertible -> R1_type_non_convertible (obtenu R1_type_non_convertible)
+[OK ] ventes : ticket_nul -> R5_champ_obligatoire_nul (obtenu R5_champ_obligatoire_nul)
+[OK ] ventes : quantite_zero -> R6_quantite_non_positive (obtenu R6_quantite_non_positive)
+[OK ] ventes : quantite_negative -> R6_quantite_non_positive (obtenu R6_quantite_non_positive)
+[OK ] ventes : montant_incoherent -> R7_montant_incoherent (obtenu R7_montant_incoherent)
+[OK ] ventes : date_inconnue -> R8_date_inconnue (obtenu R8_date_inconnue)
+[OK ] ventes : produit_inconnu -> R9_produit_inconnu (obtenu R9_produit_inconnu)
+[OK ] ventes : plusieurs_anomalies -> R6_quantite_non_positive (obtenu R6_quantite_non_positive)
+[OK ] ventes : lignes valides conservées ['arrondi_tolere', 'valide']
+[OK ] ventes : aucune ligne perdue 
+[OK ] retours : montant nul -> R5 
+[OK ] retours : quantité 0 -> R6 
+[OK ] retours : ligne valide conservée 
+[OK ] référentiel : clé dupliquée et clé nulle isolées ['R12_cle_dupliquee', 'R12_cle_dupliquee', 'R12_cle_nulle']
+[OK ] R4 clé déterministe (même contenu -> même clé) 
+[OK ] R4 contenus différents -> clés différentes 
+[OK ] R4 le canal fait partie de la clé 
+
+22/22 tests réussis

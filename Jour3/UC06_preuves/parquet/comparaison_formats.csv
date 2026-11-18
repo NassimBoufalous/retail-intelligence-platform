@@ -1,0 +1,5 @@
+﻿format;octets;mo;ratio_vs_csv;fichiers;lignes;temps_count_s;temps_somme_1_colonne_s;somme_ca_controle;type_ss_ext_sales_price;type_ss_quantity;type_date;schema_porte_par_le_fichier
+CSV (Bronze .dat);93686871;89.3;1.0;2;674211;0.26;0.27;1290066342.21;string;string;absent (clé numérique ss_sold_date_sk seulement);non : noms et types fournis par le programme
+JSON lignes;356611938;340.1;3.806;18;674211;0.56;0.58;1290066342.21;double;bigint;absent (clé numérique ss_sold_date_sk seulement);noms oui, types déduits
+Parquet (Snappy);82247889;78.4;0.878;21;674211;0.11;0.12;1290066342.21;decimal(7,2);int;date;oui
+Parquet (Snappy), colonnes source seules;37314832;35.6;0.398;18;;;;;;;;
