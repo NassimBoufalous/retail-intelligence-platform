@@ -19,7 +19,7 @@ cd "$(dirname "$0")"
 ETAPES=("$@")
 if [ ${#ETAPES[@]} -eq 0 ]; then
   ETAPES=(00_test_environnement.py 01_bronze.py 02_inventaire.py 03_silver.py 04_gold.py
-          05_qualite.py 06_formats.py 07_preuves_hdfs.sh)
+          05_qualite.py 06_formats.py 07_preuves_hdfs.sh 08_export_donnees.py)
 fi
 
 for e in "${ETAPES[@]}"; do

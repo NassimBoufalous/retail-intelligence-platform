@@ -41,8 +41,10 @@ Chaque dossier `JourN/` contient les livrables du jour, leurs preuves et les scr
     ├── notebooks/                notebook d'exploration PySpark (exécuté)
     ├── transformations/          scripts PySpark du pipeline Raw -> Bronze -> Silver -> Gold
     ├── tests/                    tests des règles de nettoyage
+    ├── README.md                 sommaire du Jour 3
+    ├── data/                     fichiers Parquet Gold complets et échantillons Silver
     ├── requirements_jour3.txt    bibliothèques Python de l'environnement Spark (WSL)
-    └── UC06_preuves/             preuves d'exécution
+    └── UC06_preuves/             preuves d'exécution (README.md : explication de chaque preuve)
 ```
 
 Chaque document n'est présent qu'en un seul format, le PDF en priorité. Les données du kit

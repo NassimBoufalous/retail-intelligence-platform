@@ -44,3 +44,5 @@ Jour2/README.md
 
 # Jour 3 : outils locaux de mise en page des PDF et de schémas (non demandés par le TP)
 Jour3/outils/
+# Jour 3 : vrais fichiers Parquet exportés pour le formateur (Gold complets, échantillons Silver, environ 1 Mo)
+!Jour3/data/

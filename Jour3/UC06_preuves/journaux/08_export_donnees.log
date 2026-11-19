@@ -1,0 +1,13 @@
+2026-11-19 09:21:50 INFO Session Spark 4.3.0 (master=local[*]), lac=hdfs://localhost:9000/retail-lake
+2026-11-19 09:21:55 INFO hdfs://localhost:9000/retail-lake/gold/ventes_mensuelles_canal -> /mnt/c/Users/nboufalo/cours-datawarehouse-datalake/Jour3/data/gold/ventes_mensuelles_canal.parquet (120 / 120 lignes)
+2026-11-19 09:21:55 INFO hdfs://localhost:9000/retail-lake/gold/ventes_categorie_annee -> /mnt/c/Users/nboufalo/cours-datawarehouse-datalake/Jour3/data/gold/ventes_categorie_annee.parquet (90 / 90 lignes)
+2026-11-19 09:21:56 INFO hdfs://localhost:9000/retail-lake/gold/ventes_magasin_annee -> /mnt/c/Users/nboufalo/cours-datawarehouse-datalake/Jour3/data/gold/ventes_magasin_annee.parquet (60 / 60 lignes)
+2026-11-19 09:21:56 INFO hdfs://localhost:9000/retail-lake/gold/retours_categorie -> /mnt/c/Users/nboufalo/cours-datawarehouse-datalake/Jour3/data/gold/retours_categorie.parquet (90 / 90 lignes)
+2026-11-19 09:21:57 INFO hdfs://localhost:9000/retail-lake/gold/retours_motif -> /mnt/c/Users/nboufalo/cours-datawarehouse-datalake/Jour3/data/gold/retours_motif.parquet (72 / 72 lignes)
+2026-11-19 09:21:59 INFO hdfs://localhost:9000/retail-lake/gold/fait_ventes -> /mnt/c/Users/nboufalo/cours-datawarehouse-datalake/Jour3/data/gold/fait_ventes.parquet (1000 / 1349142 lignes)
+2026-11-19 09:22:01 INFO hdfs://localhost:9000/retail-lake/silver/store_sales -> /mnt/c/Users/nboufalo/cours-datawarehouse-datalake/Jour3/data/silver/store_sales.parquet (1000 / 674211 lignes)
+2026-11-19 09:22:03 INFO hdfs://localhost:9000/retail-lake/silver/web_sales -> /mnt/c/Users/nboufalo/cours-datawarehouse-datalake/Jour3/data/silver/web_sales.parquet (1000 / 674931 lignes)
+2026-11-19 09:22:03 INFO hdfs://localhost:9000/retail-lake/silver/store_returns -> /mnt/c/Users/nboufalo/cours-datawarehouse-datalake/Jour3/data/silver/store_returns.parquet (1000 / 38328 lignes)
+2026-11-19 09:22:04 INFO hdfs://localhost:9000/retail-lake/silver/item -> /mnt/c/Users/nboufalo/cours-datawarehouse-datalake/Jour3/data/silver/item.parquet (1000 / 18000 lignes)
+2026-11-19 09:22:04 INFO hdfs://localhost:9000/retail-lake/silver/store -> /mnt/c/Users/nboufalo/cours-datawarehouse-datalake/Jour3/data/silver/store.parquet (12 / 12 lignes)
+2026-11-19 09:22:05 INFO hdfs://localhost:9000/retail-lake/silver/reason -> /mnt/c/Users/nboufalo/cours-datawarehouse-datalake/Jour3/data/silver/reason.parquet (35 / 35 lignes)
