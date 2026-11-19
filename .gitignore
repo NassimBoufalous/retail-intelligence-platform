@@ -46,3 +46,6 @@ Jour2/README.md
 Jour3/outils/
 # Jour 3 : vrais fichiers Parquet exportés pour le formateur (Gold complets, échantillons Silver, environ 1 Mo)
 !Jour3/data/
+
+# Jour 4 : outils locaux de construction du notebook, des schémas et des PDF
+Jour4/outils/

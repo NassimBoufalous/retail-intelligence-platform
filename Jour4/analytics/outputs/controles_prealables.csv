@@ -1,0 +1,9 @@
+﻿controle;resultat;attendu;statut
+Unicité de la clé technique ligne_id (gold/fait_ventes);1349142 distinctes / 1349142 lignes;égalité;OK
+Valeurs manquantes sur les colonnes utilisées par les KPI;0;0;OK
+Période couverte, canal magasin;"2001-01-01 -> 2005-12-31 ; 60 mois ; 1826 jours avec ventes";60 mois complets (2001-2005);OK
+Période couverte, canal web;"2001-01-01 -> 2005-12-31 ; 60 mois ; 1826 jours avec ventes";60 mois complets (2001-2005);OK
+Granularité, canal magasin : lignes vs transactions distinctes;674211 lignes, 90000 transactions (7.49 lignes / transaction);lignes > transactions (ne pas confondre);OK
+Granularité, canal web : lignes vs transactions distinctes;674931 lignes, 90000 transactions (7.5 lignes / transaction);lignes > transactions (ne pas confondre);OK
+Ticket magasin rattaché à un seul magasin et une seule date;0 ticket(s) incohérent(s);0;OK
+Silver store_sales = Gold fait_ventes (canal magasin) : lignes et CA;"lignes 674211 / 674211 ; CA 1290066342.21 / 1290066342.21";égalité;OK

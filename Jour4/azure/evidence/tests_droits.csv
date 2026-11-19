@@ -1,0 +1,17 @@
+profil;operation;chemin;attendu;obtenu;resultat;message
+svc-ingestion;écrire un fichier dans Bronze;/adls-simulation/retail-intelligence/bronze/tpcxbb/refresh/depot_ingestion.txt;AUTORISE;AUTORISE;OK;
+svc-ingestion;lister Silver;/adls-simulation/retail-intelligence/silver;REFUSE;REFUSE;OK;Permission denied: user=svc-ingestion, access=READ_EXECUTE, inode="/adls-simulation/retail-intelligence/silver":etudiant:supergroup:drwxrwx-
+svc-ingestion;lister Gold;/adls-simulation/retail-intelligence/gold;REFUSE;REFUSE;OK;Permission denied: user=svc-ingestion, access=READ_EXECUTE, inode="/adls-simulation/retail-intelligence/gold":etudiant:supergroup:drwxrwx---
+data-engineer;lire un fichier Bronze;/adls-simulation/retail-intelligence/bronze/tpcxbb/initial/store/ingest_date=2026-11-18/store.dat;AUTORISE;AUTORISE;OK;
+data-engineer;écrire dans Bronze;/adls-simulation/retail-intelligence/bronze/tpcxbb/initial/depot_dataeng.txt;REFUSE;REFUSE;OK;Permission denied: user=data-engineer, access=WRITE, inode="/adls-simulation/retail-intelligence/bronze/tpcxbb/initial":etudiant:supergroup:
+data-engineer;écrire dans Silver;/adls-simulation/retail-intelligence/silver/ventes/depot_dataeng.txt;AUTORISE;AUTORISE;OK;
+data-engineer;écrire dans Gold;/adls-simulation/retail-intelligence/gold/analyses/depot_dataeng.txt;AUTORISE;AUTORISE;OK;
+analyste;lire un indicateur Gold;/adls-simulation/retail-intelligence/gold/indicateurs/kpi_periode.csv;AUTORISE;AUTORISE;OK;
+analyste;lister Gold (analyses);/adls-simulation/retail-intelligence/gold/analyses;AUTORISE;AUTORISE;OK;
+analyste;écrire dans Gold;/adls-simulation/retail-intelligence/gold/indicateurs/depot_analyste.txt;REFUSE;REFUSE;OK;Permission denied: user=analyste, access=WRITE, inode="/adls-simulation/retail-intelligence/gold/indicateurs":etudiant:supergroup:drwxrwx---
+analyste;supprimer un fichier Gold;/adls-simulation/retail-intelligence/gold/indicateurs/kpi.csv;REFUSE;REFUSE;OK;Permission denied: user=analyste, access=WRITE, inode="/adls-simulation/retail-intelligence/gold/indicateurs":etudiant:supergroup:drwxrwx---
+analyste;lister Bronze;/adls-simulation/retail-intelligence/bronze;REFUSE;REFUSE;OK;Permission denied: user=analyste, access=READ_EXECUTE, inode="/adls-simulation/retail-intelligence/bronze":etudiant:supergroup:drwxrwx---
+analyste;lister Silver;/adls-simulation/retail-intelligence/silver;REFUSE;REFUSE;OK;Permission denied: user=analyste, access=READ_EXECUTE, inode="/adls-simulation/retail-intelligence/silver":etudiant:supergroup:drwxrwx---
+analyste;lister la racine du conteneur;/adls-simulation/retail-intelligence;REFUSE;REFUSE;OK;Permission denied: user=analyste, access=READ_EXECUTE, inode="/adls-simulation/retail-intelligence":etudiant:supergroup:drwxr-x---
+analyste;lire les contrôles qualité;/adls-simulation/retail-intelligence/quality/controles;AUTORISE;AUTORISE;OK;
+inconnu;lire un indicateur Gold;/adls-simulation/retail-intelligence/gold/indicateurs/kpi_periode.csv;REFUSE;REFUSE;OK;Permission denied: user=inconnu, access=EXECUTE, inode="/adls-simulation":etudiant:supergroup:drwxr-x---

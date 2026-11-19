@@ -1,0 +1,13 @@
+﻿granularite;canal;variable;effectif;valeurs_manquantes;min;q1;mediane;q3;max;moyenne;ecart_type;somme
+ligne de vente;magasin;quantite;674211;0;1.0;26.0;51.0;76.0;100.0;50.56;28.88;34089501.0
+ligne de vente;magasin;prix_unitaire;674211;0;0.0;10.24;27.7;56.78;199.3;37.87;34.4;
+ligne de vente;magasin;montant_ht;674211;0;0.0;313.56;1048.35;2675.06;18745.0;1913.45;2282.14;1290066342.21
+ligne de vente;web;quantite;674931;0;1.0;25.0;50.0;75.0;100.0;50.48;28.88;34072007.0
+ligne de vente;web;prix_unitaire;674931;0;0.0;13.14;35.72;74.15;299.67;50.56;48.11;
+ligne de vente;web;montant_ht;674931;0;0.0;401.31;1354.07;3496.92;28808.01;2551.12;3154.3;1721826606.15
+transaction;magasin;montant_transaction;90000;0;0.0;6319.76;13082.84;20826.32;84763.32;14334.07;9840.28;1290066342.21
+transaction;magasin;lignes_transaction;90000;0;1.0;4.0;7.0;11.0;14.0;7.49;4.02;674211.0
+transaction;magasin;quantite_transaction;90000;0;1.0;194.0;372.0;550.0;1143.0;378.77;217.37;34089501.0
+transaction;web;montant_transaction;90000;0;0.0;8255.87;17347.47;27842.96;90820.85;19131.41;13352.31;1721826606.15
+transaction;web;lignes_transaction;90000;0;1.0;4.0;8.0;11.0;14.0;7.5;4.04;674931.0
+transaction;web;quantite_transaction;90000;0;1.0;194.0;371.0;550.0;1153.0;378.58;218.15;34072007.0

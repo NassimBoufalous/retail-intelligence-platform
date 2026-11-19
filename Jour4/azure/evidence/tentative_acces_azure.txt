@@ -1,0 +1,16 @@
+# Tentative d'accès Azure (parcours A) – 19/11/2026
+# Outil : Azure CLI 2.93.0 (environnement Python isolé ~/venv-az sous WSL Ubuntu 24.04)
+# Commande : az login --use-device-code   (connexion par code, faite par l'étudiant dans le navigateur)
+
+Connexion : RÉUSSIE (compte étudiant de l'école, annuaire Microsoft Entra ID « Ecole IPSSI »)
+Réponse d'Azure :
+  WARNING: The following tenants don't contain accessible subscriptions.
+  WARNING: <id de l'annuaire masqué> 'Ecole IPSSI'
+  ERROR: No subscriptions found for <compte étudiant>.
+
+Conclusion : l'identité existe dans Entra ID, mais aucun abonnement Azure n'y est rattaché
+(offre gratuite déjà utilisée par l'étudiant lors d'un usage antérieur d'Azure).
+Sans abonnement, aucune ressource (groupe de ressources, compte de stockage ADLS Gen2) ne peut être créée.
+Difficulté prévue par le TP (§14 « Accès Azure refusé / Ressource Azure indisponible ») :
+solution de repli appliquée = parcours B local / open source (HDFS + ACL, MinIO, Spark), déconnexion (az logout).
+Aucune ressource Azure n'a été créée, aucun coût engagé.

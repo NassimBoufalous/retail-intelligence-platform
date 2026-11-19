@@ -1,0 +1,27 @@
+# Spark SQL 4.3.0 – identité HDFS : analyste – 2026-11-19 12:38:23
+
+## 1. Requête sur la zone Gold (autorisée)
+SELECT s_store_name AS magasin, s_state AS etat,
+       ROUND(SUM(ca_ht) / 1e6, 2)                      AS ca_ht_millions,
+       SUM(nb_tickets_commandes)                        AS tickets,
+       ROUND(SUM(ca_ht) / SUM(nb_tickets_commandes), 2) AS panier_moyen
+FROM ventes_magasin_annee
+WHERE annee = 2005
+GROUP BY s_store_name, s_state
+ORDER BY ca_ht_millions DESC
+LIMIT 5
+
++----------+----+--------------+-------+------------+
+|magasin   |etat|ca_ht_millions|tickets|panier_moyen|
++----------+----+--------------+-------+------------+
+|Germantown|WV  |22.61         |1556   |14532.80    |
+|Forest    |CO  |21.94         |1522   |14412.02    |
+|Elmwood   |KY  |21.65         |1537   |14084.55    |
+|Hillside  |TN  |21.55         |1524   |14141.31    |
+|Avalon    |TN  |21.53         |1538   |14000.30    |
++----------+----+--------------+-------+------------+
+
+
+## 2. Même identité, lecture de la zone Silver (interdite par la matrice des droits)
+RÉSULTAT : lecture REFUSÉE, conforme à la matrice des droits
+: org.apache.hadoop.security.AccessControlException: Permission denied: user=analyste, access=EXECUTE, inode="/adls-simulation/retail-intelligence/silver":etudiant:supergroup:drwxrwx---

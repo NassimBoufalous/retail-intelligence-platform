@@ -1,0 +1,10 @@
+# file: /adls-simulation/retail-intelligence/bronze/tpcxbb/refresh/depot_ingestion.txt
+# owner: svc-ingestion
+# group: supergroup
+user::rw-
+user:data-engineer:r-x	#effective:r--
+user:svc-ingestion:rwx	#effective:rw-
+group::r-x	#effective:r--
+mask::rw-
+other::---
+

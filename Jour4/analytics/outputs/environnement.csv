@@ -1,0 +1,14 @@
+﻿element;valeur
+Date d'exécution;2026-11-19 10:45
+Système;Linux 6.6.87.2-microsoft-standard-WSL2
+Python;3.12.3
+Exécutable Python (noyau);/home/etudiant/venv-tp3/bin/python
+PySpark;4.3.0
+Pandas;2.3.3
+Matplotlib;3.11.2
+JAVA_HOME;/usr/lib/jvm/java-17-openjdk-amd64
+HADOOP_CONF_DIR;/opt/hadoop/etc/hadoop
+Spark;4.3.0
+Java (JVM de Spark);17.0.21.0.3
+Mode d'exécution;local[*]
+Hadoop (client de Spark);3.5.0

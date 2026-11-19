@@ -1,0 +1,81 @@
+﻿kpi;libelle;annee;canal;valeur;unite
+K01;Chiffre d'affaires HT;2001;magasin;258159395.33;unité monétaire
+K01;Chiffre d'affaires HT;2002;magasin;256977671.52;unité monétaire
+K01;Chiffre d'affaires HT;2003;magasin;259060054.76;unité monétaire
+K01;Chiffre d'affaires HT;2004;magasin;260029656.73;unité monétaire
+K01;Chiffre d'affaires HT;2005;magasin;255839563.87;unité monétaire
+K01;Chiffre d'affaires HT;2001;web;344217849.15;unité monétaire
+K01;Chiffre d'affaires HT;2002;web;343913207.87;unité monétaire
+K01;Chiffre d'affaires HT;2003;web;347370411.35;unité monétaire
+K01;Chiffre d'affaires HT;2004;web;345147634.03;unité monétaire
+K01;Chiffre d'affaires HT;2005;web;341177503.75;unité monétaire
+K02;Transactions distinctes (tickets / commandes);2001;magasin;17991.0;nombre
+K02;Transactions distinctes (tickets / commandes);2002;magasin;17990.0;nombre
+K02;Transactions distinctes (tickets / commandes);2003;magasin;17990.0;nombre
+K02;Transactions distinctes (tickets / commandes);2004;magasin;18039.0;nombre
+K02;Transactions distinctes (tickets / commandes);2005;magasin;17990.0;nombre
+K02;Transactions distinctes (tickets / commandes);2001;web;17991.0;nombre
+K02;Transactions distinctes (tickets / commandes);2002;web;17990.0;nombre
+K02;Transactions distinctes (tickets / commandes);2003;web;17990.0;nombre
+K02;Transactions distinctes (tickets / commandes);2004;web;18039.0;nombre
+K02;Transactions distinctes (tickets / commandes);2005;web;17990.0;nombre
+K03;Panier moyen;2001;magasin;14349.36;unité monétaire / transaction
+K03;Panier moyen;2002;magasin;14284.47;unité monétaire / transaction
+K03;Panier moyen;2003;magasin;14400.23;unité monétaire / transaction
+K03;Panier moyen;2004;magasin;14414.86;unité monétaire / transaction
+K03;Panier moyen;2005;magasin;14221.21;unité monétaire / transaction
+K03;Panier moyen;2001;web;19132.78;unité monétaire / transaction
+K03;Panier moyen;2002;web;19116.91;unité monétaire / transaction
+K03;Panier moyen;2003;web;19309.08;unité monétaire / transaction
+K03;Panier moyen;2004;web;19133.41;unité monétaire / transaction
+K03;Panier moyen;2005;web;18964.84;unité monétaire / transaction
+K04;Quantités vendues;2001;magasin;6814234.0;unités
+K04;Quantités vendues;2002;magasin;6825340.0;unités
+K04;Quantités vendues;2003;magasin;6820308.0;unités
+K04;Quantités vendues;2004;magasin;6887086.0;unités
+K04;Quantités vendues;2005;magasin;6742533.0;unités
+K04;Quantités vendues;2001;web;6821120.0;unités
+K04;Quantités vendues;2002;web;6825400.0;unités
+K04;Quantités vendues;2003;web;6820882.0;unités
+K04;Quantités vendues;2004;web;6840416.0;unités
+K04;Quantités vendues;2005;web;6764189.0;unités
+K06;Évolution du CA N / N-1;2001;magasin;;%
+K06;Évolution du CA N / N-1;2002;magasin;-0.46;%
+K06;Évolution du CA N / N-1;2003;magasin;0.81;%
+K06;Évolution du CA N / N-1;2004;magasin;0.37;%
+K06;Évolution du CA N / N-1;2005;magasin;-1.61;%
+K06;Évolution du CA N / N-1;2001;web;;%
+K06;Évolution du CA N / N-1;2002;web;-0.09;%
+K06;Évolution du CA N / N-1;2003;web;1.01;%
+K06;Évolution du CA N / N-1;2004;web;-0.64;%
+K06;Évolution du CA N / N-1;2005;web;-1.15;%
+K07;Part du canal dans le CA;2001;magasin;42.86;%
+K07;Part du canal dans le CA;2002;magasin;42.77;%
+K07;Part du canal dans le CA;2003;magasin;42.72;%
+K07;Part du canal dans le CA;2004;magasin;42.97;%
+K07;Part du canal dans le CA;2005;magasin;42.85;%
+K07;Part du canal dans le CA;2001;web;57.14;%
+K07;Part du canal dans le CA;2002;web;57.23;%
+K07;Part du canal dans le CA;2003;web;57.28;%
+K07;Part du canal dans le CA;2004;web;57.03;%
+K07;Part du canal dans le CA;2005;web;57.15;%
+K09;Taux de retour en quantité (cohorte de vente);2001;magasin;2.86;%
+K09;Taux de retour en quantité (cohorte de vente);2002;magasin;2.99;%
+K09;Taux de retour en quantité (cohorte de vente);2003;magasin;2.81;%
+K09;Taux de retour en quantité (cohorte de vente);2004;magasin;2.91;%
+K09;Taux de retour en quantité (cohorte de vente);2005;magasin;2.71;%
+K09;Taux de retour en quantité (cohorte de vente);2001;web;2.96;%
+K09;Taux de retour en quantité (cohorte de vente);2002;web;2.9;%
+K09;Taux de retour en quantité (cohorte de vente);2003;web;3.0;%
+K09;Taux de retour en quantité (cohorte de vente);2004;web;2.98;%
+K09;Taux de retour en quantité (cohorte de vente);2005;web;2.73;%
+K12;Lignes de vente;2001;magasin;134873.0;nombre
+K12;Lignes de vente;2002;magasin;135084.0;nombre
+K12;Lignes de vente;2003;magasin;134773.0;nombre
+K12;Lignes de vente;2004;magasin;136014.0;nombre
+K12;Lignes de vente;2005;magasin;133467.0;nombre
+K12;Lignes de vente;2001;web;135186.0;nombre
+K12;Lignes de vente;2002;web;135124.0;nombre
+K12;Lignes de vente;2003;web;135122.0;nombre
+K12;Lignes de vente;2004;web;135361.0;nombre
+K12;Lignes de vente;2005;web;134138.0;nombre

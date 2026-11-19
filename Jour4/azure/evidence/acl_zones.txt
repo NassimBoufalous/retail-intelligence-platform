@@ -1,0 +1,110 @@
+# hdfs dfs -getfacl (répertoires des zones)   (2026-11-19 12:37:51)
+# file: /adls-simulation
+# owner: etudiant
+# group: supergroup
+user::rwx
+user:analyste:--x
+user:data-engineer:--x
+user:svc-ingestion:--x
+group::r-x
+mask::r-x
+other::---
+
+
+# file: /adls-simulation/retail-intelligence
+# owner: etudiant
+# group: supergroup
+user::rwx
+user:analyste:--x
+user:data-engineer:--x
+user:svc-ingestion:--x
+group::r-x
+mask::r-x
+other::---
+
+
+# file: /adls-simulation/retail-intelligence/bronze
+# owner: etudiant
+# group: supergroup
+user::rwx
+user:data-engineer:r-x
+user:svc-ingestion:rwx
+group::r-x
+mask::rwx
+other::---
+default:user::rwx
+default:user:data-engineer:r-x
+default:user:svc-ingestion:rwx
+default:group::r-x
+default:mask::rwx
+default:other::---
+
+
+# file: /adls-simulation/retail-intelligence/silver
+# owner: etudiant
+# group: supergroup
+user::rwx
+user:data-engineer:rwx
+group::r-x
+mask::rwx
+other::---
+default:user::rwx
+default:user:data-engineer:rwx
+default:group::r-x
+default:mask::rwx
+default:other::---
+
+
+# file: /adls-simulation/retail-intelligence/gold
+# owner: etudiant
+# group: supergroup
+user::rwx
+user:analyste:r-x
+user:data-engineer:rwx
+group::r-x
+mask::rwx
+other::---
+default:user::rwx
+default:user:analyste:r-x
+default:user:data-engineer:rwx
+default:group::r-x
+default:mask::rwx
+default:other::---
+
+
+# file: /adls-simulation/retail-intelligence/quality
+# owner: etudiant
+# group: supergroup
+user::rwx
+user:analyste:r-x
+user:data-engineer:rwx
+group::r-x
+mask::rwx
+other::---
+default:user::rwx
+default:user:analyste:r-x
+default:user:data-engineer:rwx
+default:group::r-x
+default:mask::rwx
+default:other::---
+
+
+# file: /adls-simulation/retail-intelligence/documentation
+# owner: etudiant
+# group: supergroup
+user::rwx
+user:analyste:r-x
+user:data-engineer:rwx
+user:svc-ingestion:r-x
+group::r-x
+mask::rwx
+other::---
+default:user::rwx
+default:user:analyste:r-x
+default:user:data-engineer:rwx
+default:user:svc-ingestion:r-x
+default:group::r-x
+default:mask::rwx
+default:other::---
+
+

@@ -1,0 +1,46 @@
+﻿kpi;libelle;annee;jour1;jour4_spark;ecart;identique
+K01;CA magasin;2001;258159395.0;258159395.33;0.33;True
+K01;CA magasin;2002;256977672.0;256977671.52;-0.48;True
+K01;CA magasin;2003;259060055.0;259060054.76;-0.24;True
+K01;CA magasin;2004;260029657.0;260029656.73;-0.27;True
+K01;CA magasin;2005;255839564.0;255839563.87;-0.13;True
+K01b;CA web;2001;344217849.0;344217849.15;0.15;True
+K01b;CA web;2002;343913208.0;343913207.87;-0.13;True
+K01b;CA web;2003;347370411.0;347370411.35;0.35;True
+K01b;CA web;2004;345147634.0;345147634.03;0.03;True
+K01b;CA web;2005;341177504.0;341177503.75;-0.25;True
+K02;Tickets magasin;2001;17991.0;17991.0;0.0;True
+K02;Tickets magasin;2002;17990.0;17990.0;0.0;True
+K02;Tickets magasin;2003;17990.0;17990.0;0.0;True
+K02;Tickets magasin;2004;18039.0;18039.0;0.0;True
+K02;Tickets magasin;2005;17990.0;17990.0;0.0;True
+K02b;Commandes web;2001;17991.0;17991.0;0.0;True
+K02b;Commandes web;2002;17990.0;17990.0;0.0;True
+K02b;Commandes web;2003;17990.0;17990.0;0.0;True
+K02b;Commandes web;2004;18039.0;18039.0;0.0;True
+K02b;Commandes web;2005;17990.0;17990.0;0.0;True
+K03;Panier moyen magasin;2001;14349.36;14349.36;0.0;True
+K03;Panier moyen magasin;2002;14284.47;14284.47;0.0;True
+K03;Panier moyen magasin;2003;14400.23;14400.23;-0.0;True
+K03;Panier moyen magasin;2004;14414.86;14414.86;-0.0;True
+K03;Panier moyen magasin;2005;14221.21;14221.21;-0.0;True
+K04;Quantités vendues magasin;2001;6814234.0;6814234.0;0.0;True
+K04;Quantités vendues magasin;2002;6825340.0;6825340.0;0.0;True
+K04;Quantités vendues magasin;2003;6820308.0;6820308.0;0.0;True
+K04;Quantités vendues magasin;2004;6887086.0;6887086.0;0.0;True
+K04;Quantités vendues magasin;2005;6742533.0;6742533.0;0.0;True
+K07;Part du web dans le CA (%);2001;57.14;57.14;0.0;True
+K07;Part du web dans le CA (%);2002;57.23;57.23;0.0;True
+K07;Part du web dans le CA (%);2003;57.28;57.28;0.0;True
+K07;Part du web dans le CA (%);2004;57.03;57.03;0.0;True
+K07;Part du web dans le CA (%);2005;57.15;57.15;-0.0;True
+K09;Taux de retour quantité magasin (%);2001;2.86;2.86;-0.0;True
+K09;Taux de retour quantité magasin (%);2002;2.99;2.99;-0.0;True
+K09;Taux de retour quantité magasin (%);2003;2.81;2.81;-0.0;True
+K09;Taux de retour quantité magasin (%);2004;2.91;2.91;-0.0;True
+K09;Taux de retour quantité magasin (%);2005;2.71;2.71;-0.0;True
+K12;Lignes de vente magasin;2001;134873.0;134873.0;0.0;True
+K12;Lignes de vente magasin;2002;135084.0;135084.0;0.0;True
+K12;Lignes de vente magasin;2003;134773.0;134773.0;0.0;True
+K12;Lignes de vente magasin;2004;136014.0;136014.0;0.0;True
+K12;Lignes de vente magasin;2005;133467.0;133467.0;0.0;True

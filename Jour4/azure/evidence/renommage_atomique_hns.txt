@@ -1,0 +1,10 @@
+# Renommage atomique d'un répertoire (2026-11-19 12:36:40)
+## Avant : jeu écrit dans un répertoire temporaire (invisible pour les lecteurs du jeu final)
+répertoires=1, fichiers=2, octets=7368  /adls-simulation/retail-intelligence/gold/analyses/_tmp_publication_retours_categorie
+  gold/analyses/_tmp_publication_retours_categorie/_SUCCESS
+  gold/analyses/_tmp_publication_retours_categorie/part-00000-bf31a969-1c47-4d45-aa09-1df05a98d4eb-c000.snappy.parquet
+## Opération : hdfs dfs -mv <tmp> gold/analyses/retours_categorie   (une seule opération, 989 ms client compris)
+## Après : le répertoire temporaire n'existe plus, tous les fichiers sont publiés ensemble
+  temporaire absent : OK
+répertoires=1, fichiers=2, octets=7368  gold/analyses/retours_categorie
+## Sans HNS (stockage objet plat), le même « renommage » = copie puis suppression de chaque objet : non atomique.

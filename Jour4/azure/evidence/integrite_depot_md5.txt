@@ -1,0 +1,3 @@
+# Vérification d'intégrité du dépôt (2026-11-19 12:36:37)
+kpi_periode.csv ; MD5 local = 75ad9a0c752909db180feb2570c5249c ; MD5 relu dans HDFS = 75ad9a0c752909db180feb2570c5249c ; IDENTIQUE
+kpi.csv ; MD5 local = 725180c361b4c1ab526f7dd305632f0d ; MD5 relu dans HDFS = 725180c361b4c1ab526f7dd305632f0d ; IDENTIQUE
